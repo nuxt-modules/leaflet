@@ -45,7 +45,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Add Leaflet's JS
     addPlugin({
-      src: path.resolve(__dirname, 'runtime/leaflet-runtime.ts'),
+      src: path.resolve(__dirname, 'runtime/leaflet-runtime'),
       mode: 'client'
     })
 
