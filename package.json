@@ -1,6 +1,6 @@
 {
   "name": "nuxt3-leaflet",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Nuxt 3 module for Leaflet",
   "repository": "https://github.com/Gugustinette/Nuxt-Leaflet",
   "license": "Apache-2.0",
