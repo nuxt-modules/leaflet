@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.0.5
+
+[compare changes](https://github.com/Gugustinette/Nuxt-Leaflet/compare/v1.0.4...v1.0.5)
+
+
+### 🏡 Chore
+
+  - **release:** V1.0.4 ([2017b42](https://github.com/Gugustinette/Nuxt-Leaflet/commit/2017b42))
+
+### ❤️  Contributors
+
+- Gugustinette <mercier.augustin@outlook.fr>
+
 ## v1.0.4
 
 [compare changes](https://github.com/Gugustinette/Nuxt-Leaflet/compare/v1.0.3...v1.0.4)
