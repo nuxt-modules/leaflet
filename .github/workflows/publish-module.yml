@@ -22,9 +22,15 @@ jobs:
           run: npm run test
         - name: Prepack
           run: npm run prepack
+        - name: Configuring Git
+          run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@example.com"
         - name: Update package version
           run: npm version ${{ github.event.release.tag_name }}
         - name: Publish package to NPM
           run: npm publish
           env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        - name: Publish package to GitHub
+          run: git push
+          env:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
