@@ -1,8 +1,12 @@
 name: Publish to NPM
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
     publish:
@@ -25,7 +29,7 @@ jobs:
         - name: Configuring Git
           run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@example.com"
         - name: Update package version
-          run: npm version ${{ github.event.release.tag_name }}
+          run: npm version patch
         - name: Publish package to NPM
           run: npm publish
           env:
