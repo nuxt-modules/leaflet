@@ -1,23 +1,8 @@
 name: Publish to NPM
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - 'src/**/*'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'tsconfig.json'
-  pull_request:
-    branches:
-      - master
-    paths:
-      - 'src/**/*'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'tsconfig.json'
-
+  release:
+    types: [created]
 
 jobs:
     publish:
