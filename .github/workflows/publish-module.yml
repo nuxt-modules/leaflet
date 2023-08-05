@@ -1,0 +1,41 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/**/*'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'src/**/*'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v2
+          with:
+            node-version: 18
+            registry-url: https://registry.npmjs.org/
+        - run: npm ci
+        - name: Lint with ESLint
+          run: npm run lint
+        - name: Test package
+          run: npm run test
+        - name: Prepack
+          run: npm run prepack
+        - name: Publish package to NPM
+          run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
