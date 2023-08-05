@@ -16,6 +16,8 @@ jobs:
         - run: npm ci
         - name: Lint with ESLint
           run: npm run lint
+        - name: Prepare testing with the playground
+          run: npm run dev:prepare
         - name: Test package
           run: npm run test
         - name: Prepack
