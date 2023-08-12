@@ -30,7 +30,3 @@ jobs:
           run: npm publish
           env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        - name: Publish package bump version to GitHub
-          run: git push origin HEAD:master --force
-          env:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
