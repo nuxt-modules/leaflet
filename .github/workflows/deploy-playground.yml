@@ -23,7 +23,7 @@ jobs:
         - name: Prepare the playground
           run: npm run dev:prepare
         - name: Generate the playground
-          run: npm run dev:ssg
+          run: npm run generate
           working-directory: ./playground
         - name: Deploy to GitHub Pages
           uses: peaceiris/actions-gh-pages@v3
