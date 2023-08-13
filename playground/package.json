@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "nuxi dev",
+    "dev:ssg": "npm run generate && npx serve .output/public",
     "build": "nuxi build",
     "generate": "nuxi generate"
   },
