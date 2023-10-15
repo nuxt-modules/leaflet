@@ -6,7 +6,10 @@
           <NuxtLink to="/">Home</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/map/search">Map</NuxtLink>
+          <NuxtLink to="/map/map">Map</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/map/geojson">GeoJson</NuxtLink>
         </li>
       </ul>
     </nav>
