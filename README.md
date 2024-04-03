@@ -22,20 +22,8 @@ This module is really just about making it work with Nuxt 3 without the need to 
 
 ## Quick Setup
 
-1. Add `nuxt3-leaflet` dependency to your project
-
 ```bash
 npx nuxi@latest module add nuxt3-leaflet
-```
-
-2. Add `nuxt3-leaflet` to the `modules` section of `nuxt.config.ts`
-
-```js
-export default defineNuxtConfig({
-  modules: [
-    'nuxt3-leaflet'
-  ]
-})
 ```
 
 That's it! You can now use Leaflet in your Nuxt app ✨
