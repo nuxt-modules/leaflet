@@ -6,7 +6,7 @@
 [![Nuxt][nuxt-src]][nuxt-href]
 
 A Nuxt 3 module to use Leaflet.
-It was made using [Vue Leaflet](https://github.com/vue-leaflet/vue-leaflet) which is a Vue 3 wrapper for Leaflet, that exposes the original Leaflet API as Vue components.
+It was made using [Vue Leaflet](https://github.com/vue-leaflet/vue-leaflet) which is a Vue 3 wrapper for Leaflet, that exposes [the original Leaflet API](https://github.com/Leaflet) as Vue components.
 
 This module is really just about making it work with Nuxt 3 without the need to configure anything.
 
@@ -22,11 +22,13 @@ This module is really just about making it work with Nuxt 3 without the need to 
 
 ## Quick Setup
 
+Run `npx` command to add `nuxt3-leaflet` into your `package.json` and `nuxt.config.ts`
+
 ```bash
 npx nuxi@latest module add nuxt3-leaflet
 ```
 
-That's it! You can now use Leaflet in your Nuxt app ✨
+That's it! You can now use Leaflet 🍃 in your Nuxt app ✨
 
 ## Usage
 
@@ -38,11 +40,11 @@ Please note that components are exported in PascalCase, so for example, write `<
 
 ```vue
 <template>
-  <div style="height:100vh; width:100vw">
+  <div style="height:100svh; width:100svw">
     <LMap
       ref="map"
       :zoom="zoom"
-      :center="[47.21322, -1.559482]"
+      :center="center"
     >
       <LTileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -50,13 +52,47 @@ Please note that components are exported in PascalCase, so for example, write `<
         layer-type="base"
         name="OpenStreetMap"
       />
+      <!-- Example with a marker in the center of the map -->
+      <LMarker
+          v-if="hasMarker"
+          :lat-lng="position.latLng"
+        >
+          <!-- Example with a custom icon set in public folder  -->
+          <LIcon
+            :icon-size="[32, 37]"
+            :icon-anchor="[16, 37]"
+            icon-url="/marker.png"
+          />
+        </LMarker>
     </LMap>
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
+// Use leaflet library types
+import type { PointExpression, LatLngExpression } from "leaflet"
+
 const zoom = ref(6)
+
+// You could re-use your map component passing props!
+defineProps<{
+  hasMarker: boolean
+}>()
+
+onMounted(() = {
+  // and ... you could create animation on load
+  zoom.value = 12
+})
+
+const position = () => {
+  const position = [47.21322, -1.559482]
+
+  // Example matching position to LMap's center and LMarker's lat-lng types
+  return {
+    latLng: position as LatLngExpression,
+    center: position as PointExpression,
+  }
+}
 </script>
 
 <style>
