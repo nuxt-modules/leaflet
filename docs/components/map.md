@@ -9,7 +9,7 @@ outline: deep
   <div style="height:100vh; width:100vw">
     <LMap
       ref="map"
-      :zoom="zoom"
+      :zoom="6"
       :center="[47.21322, -1.559482]"
     >
       <LTileLayer
@@ -21,9 +21,4 @@ outline: deep
     </LMap>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-const zoom = ref(6)
-</script>
 ```

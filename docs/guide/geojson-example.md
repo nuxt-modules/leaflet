@@ -1,6 +1,10 @@
+# GeoJSON example
+
+This is how you can add a GeoJSON layer to your map.
+
+````vue{14-17,25-30,33-38}
 <template>
   <div style="height:100vh; width:100vw">
-    <h1>GeoJson Example</h1>
     <LMap
       :zoom="6"
       :max-zoom="18"
@@ -22,15 +26,21 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+
+// Initialize the geojson ref
 const geojson = ref(undefined)
+// Define the style for the GeoJSON layer
 const geoStyler = (feature) => ({
-  opacity: feature.properties.code / 100000,
+    opacity: feature.properties.code / 100000,
 })
 
 onMounted(async () => {
-  const response = await fetch(
-    "https://rawgit.com/gregoiredavid/france-geojson/master/regions/pays-de-la-loire/communes-pays-de-la-loire.geojson"
-  );
-  geojson.value = await response.json();
+    // Fetch the GeoJSON data
+    const response = await fetch(
+        "https://rawgit.com/gregoiredavid/france-geojson/master/regions/pays-de-la-loire/communes-pays-de-la-loire.geojson"
+    );
+    // Set the geojson ref with the fetched data
+    geojson.value = await response.json();
 });
 </script>
+````

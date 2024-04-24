@@ -1,6 +1,14 @@
+# Leaflet Draw (Experimental)
+
+This shows how to use the Leaflet Draw plugin, by importing the script asynchronously from a CDN.
+
+::: warning
+This is still very buggy and may not work as expected.
+:::
+
+````vue
 <template>
   <div style="height:100vh; width:100vw">
-    <h1>Draw API</h1>
     <ClientOnly>
       <!-- Load Leaflet Draw from cdn -->
       <link
@@ -48,3 +56,4 @@ const mapInitialized = () => {
   map.value.leafletObject.addControl(drawControl);
 }
 </script>
+````

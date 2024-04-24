@@ -10,8 +10,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Quick Start', link: '/get-started' },
-      { text: 'Components', link: '/components' }
+      { text: 'Quick Start', link: '/getting-started/installation' },
+      { text: 'Components', link: '/components/index' }
     ],
 
     sidebar: [
@@ -32,8 +32,10 @@ export default defineConfig({
       {
         text: 'Guide',
         items: [
+          { text: 'Using L', link: '/guide/using-l' },
           { text: 'Accessing Map Instance', link: '/guide/accessing-map-instance' },
-          { text: 'Using L', link: '/guide/using-l' }
+          { text: 'GeoJson Example', link: '/guide/geojson-example' },
+          { text: 'Leaflet Draw (Experimental)', link: '/guide/leaflet-draw' }
         ]
       }
     ],
