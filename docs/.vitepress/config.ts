@@ -26,7 +26,8 @@ export default defineConfig({
         text: 'Components',
         items: [
           { text: 'Index', link: '/components/index' },
-          { text: 'Map', link: '/components/map' }
+          { text: 'LCircle', link: '/components/l-circle' },
+          { text: 'LMap', link: '/components/l-map' }
         ]
       },
       {

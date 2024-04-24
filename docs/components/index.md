@@ -4,7 +4,7 @@ outline: deep
 
 # Components
 
-The module automatically registers the following components:
+The module automatically registers the following components from [Vue Leaflet](https://github.com/vue-leaflet/vue-leaflet) :
 
 - `LCircle`
 - `LCircleMarker`
@@ -27,3 +27,7 @@ The module automatically registers the following components:
 - `LTileLayer`
 - `LTooltip`
 - `LWmsTileLayer`
+
+::: tip
+Further documentation for these components was mostly copied from the [Vue2 Leaflet Documentation](https://vue2-leaflet.netlify.app/components/) and could be wrong.
+:::
