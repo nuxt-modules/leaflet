@@ -67,3 +67,7 @@ const mapInitialized = () => {
 }
 </script>
 ````
+
+::: tip
+This method should work on any Leaflet component, not just `LMap`. You can access the leaflet instance of any component by adding a ref to it and calling `ref.value.leafletObject`.
+:::

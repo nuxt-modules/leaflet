@@ -9,24 +9,19 @@ outline: deep
 ## Demo
 
 <script setup>
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
 </script>
 
-<div style="height: 350px;">
-  <LMap
-    ref="map"
-    :zoom="6"
-    :center="[47.21322, -1.559482]"
-  >
-    <LTileLayer
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
-      layer-type="base"
-      name="OpenStreetMap"
-    />
-  </LMap>
-</div>
+<LMap style="height: 350px" :zoom="6" :center="[47.21322, -1.559482]">
+  <LTileLayer
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+    layer-type="base"
+    name="OpenStreetMap"
+  />
+</LMap>
 
 ## Props
 

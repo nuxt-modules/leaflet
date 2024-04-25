@@ -27,7 +27,27 @@ export default defineConfig({
         items: [
           { text: 'Index', link: '/components/index' },
           { text: 'LCircle', link: '/components/l-circle' },
-          { text: 'LMap', link: '/components/l-map' }
+          { text: 'LCircleMarker', link: '/components/l-circle-marker' },
+          { text: 'LControlAttribution', link: '/components/l-control-attribution' },
+          { text: 'LControlLayers', link: '/components/l-control-layers' },
+          { text: 'LControlScale', link: '/components/l-control-scale' },
+          { text: 'LControlZoom', link: '/components/l-control-zoom' },
+          { text: 'LControl', link: '/components/l-control' },
+          { text: 'LFeatureGroup', link: '/components/l-feature-group' },
+          { text: 'LGeoJson', link: '/components/l-geo-json' },
+          { text: 'LGridLayer', link: '/components/l-grid-layer' },
+          { text: 'LIcon', link: '/components/l-icon' },
+          { text: 'LImageOverlay', link: '/components/l-image-overlay' },
+          { text: 'LLayerGroup', link: '/components/l-layer-group' },
+          { text: 'LMap', link: '/components/l-map' },
+          { text: 'LMarker', link: '/components/l-marker' },
+          { text: 'LPolygon', link: '/components/l-polygon' },
+          { text: 'LPolyline', link: '/components/l-polyline' },
+          { text: 'LPopup', link: '/components/l-popup' },
+          { text: 'LRectangle', link: '/components/l-rectangle' },
+          { text: 'LTileLayer', link: '/components/l-tile-layer' },
+          { text: 'LTooltip', link: '/components/l-tooltip' },
+          { text: 'LWmsTileLayer', link: '/components/l-wms-tile-layer' },
         ]
       },
       {
