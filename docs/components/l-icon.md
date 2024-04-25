@@ -96,6 +96,8 @@ const changeIcon = () => {
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
+
 const iconWidth = ref(21);
 const iconHeight = ref(42);
 

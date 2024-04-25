@@ -51,7 +51,7 @@ const childRender = (props) => () => {
   />
 </LMap>
 
-```vue
+```vue{8-10,13-28}
 <LMap style="height: 350px" :zoom="8" :center="[47.21322, -1.559482]">
   <LTileLayer
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
