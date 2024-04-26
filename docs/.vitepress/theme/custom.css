@@ -35,6 +35,11 @@
 
   /* Gray */
   --vp-c-gray-3: #121A31;
+
+  /* Primary Button */
+  --vp-button-brand-text: #0F172A;
+  --vp-button-brand-hover-text: #0F172A;
+  --vp-button-brand-hover-bg: #03C169;
 }
 
 /* Leaflet specific style */
