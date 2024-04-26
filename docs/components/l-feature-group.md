@@ -6,6 +6,10 @@ outline: deep
 
 > Group together elements of the maps including: markers, geoJSON, polylines and polygon, tooltip and popup.
 
+::: warning
+This still needs better documentation and examples.
+:::
+
 ## Demo
 
 <script setup>
