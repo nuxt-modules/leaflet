@@ -55,7 +55,6 @@ export default defineConfig({
         items: [
           { text: 'Using L', link: '/guide/using-l' },
           { text: 'Accessing Map Instance', link: '/guide/accessing-map-instance' },
-          { text: 'GeoJson Example', link: '/guide/geojson-example' },
           { text: 'Leaflet Draw (Experimental)', link: '/guide/leaflet-draw' }
         ]
       }
