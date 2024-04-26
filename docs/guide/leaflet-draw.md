@@ -6,6 +6,65 @@ This shows how to use the Leaflet Draw plugin, by importing the script asynchron
 This is still very buggy and may not work as expected.
 :::
 
+## Demo
+
+<script setup lang="ts">
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet';
+import { ref, onBeforeMount } from 'vue';
+
+const map = ref(null)
+
+// Before mount, load the Leaflet Draw script
+onBeforeMount(() => {
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js';
+  script.async = true;
+  script.onload = () => {
+    console.log('Leaflet Draw loaded');
+  };
+  document.head.appendChild(script);
+});
+
+// When the map is ready
+const mapInitialized = () => {
+  // Init the draw control
+  // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
+  const drawnItems = new L.FeatureGroup();
+  map.value.leafletObject.addLayer(drawnItems);
+  const drawControl = new L.Control.Draw({
+      edit: {
+          featureGroup: drawnItems
+      }
+  });
+  map.value.leafletObject.addControl(drawControl);
+}
+</script>
+
+<ClientOnly>
+  <!-- Load Leaflet Draw from cdn -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+  >
+  <LMap
+    ref="map"
+    style="height: 350px"
+    :zoom="6"
+    :max-zoom="18"
+    :center="[47.21322, -1.559482]"
+    @ready="mapInitialized"
+  >
+    <LTileLayer
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+      layer-type="base"
+      name="OpenStreetMap"
+    />
+  </LMap>
+</ClientOnly>
+
 ````vue
 <template>
   <div style="height:100vh; width:100vw">
