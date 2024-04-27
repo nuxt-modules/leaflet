@@ -1,31 +1,24 @@
 <template>
   <div style="height:100vh; width:100vw">
-    <h1>Draw API</h1>
-    <ClientOnly>
-      <!-- Load Leaflet Draw from cdn -->
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
-      >
-      <Script
-        async
-        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"
+    <!-- Load Leaflet Draw CSS from cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+    >
+    <LMap
+      ref="map"
+      :zoom="6"
+      :max-zoom="18"
+      :center="[47.21322, -1.559482]"
+      @ready="mapInitialized"
+    >
+      <LTileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+        layer-type="base"
+        name="OpenStreetMap"
       />
-      <LMap
-        ref="map"
-        :zoom="6"
-        :max-zoom="18"
-        :center="[47.21322, -1.559482]"
-        @ready="mapInitialized"
-      >
-        <LTileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
-          layer-type="base"
-          name="OpenStreetMap"
-        />
-      </LMap>
-    </ClientOnly>
+    </LMap>
   </div>
 </template>
 
@@ -36,15 +29,24 @@ const map = ref(null)
 
 // When the map is ready
 const mapInitialized = () => {
-  // Init the draw control
-  // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
-  const drawnItems = new L.FeatureGroup();
-  map.value.leafletObject.addLayer(drawnItems);
-  const drawControl = new L.Control.Draw({
-      edit: {
-          featureGroup: drawnItems
-      }
-  });
-  map.value.leafletObject.addControl(drawControl);
+  // Load the Leaflet Draw script
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js';
+  script.async = true;
+  // When it is loaded
+  script.onload = () => {
+    // Init the draw control
+    // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
+    const drawnItems = new L.FeatureGroup();
+    map.value.leafletObject.addLayer(drawnItems);
+    const drawControl = new L.Control.Draw({
+        edit: {
+            featureGroup: drawnItems
+        }
+    });
+    map.value.leafletObject.addControl(drawControl);
+  };
+  // Append the script element to the DOM
+  document.head.appendChild(script);
 }
 </script>

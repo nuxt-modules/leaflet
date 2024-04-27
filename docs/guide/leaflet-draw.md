@@ -12,87 +12,77 @@ This is still very buggy and may not work as expected.
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet';
-import { ref, onBeforeMount } from 'vue';
+import { ref } from 'vue';
 
 const map = ref(null)
 
-// Before mount, load the Leaflet Draw script
-onBeforeMount(() => {
+// When the map is ready
+const mapInitialized = () => {
+  // Load the Leaflet Draw script
   const script = document.createElement('script');
   script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js';
   script.async = true;
+  // When it is loaded
   script.onload = () => {
-    console.log('Leaflet Draw loaded');
+    // Init the draw control
+    // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
+    const drawnItems = new L.FeatureGroup();
+    map.value.leafletObject.addLayer(drawnItems);
+    const drawControl = new L.Control.Draw({
+        edit: {
+            featureGroup: drawnItems
+        }
+    });
+    map.value.leafletObject.addControl(drawControl);
   };
+  // Append the script element to the DOM
   document.head.appendChild(script);
-});
-
-// When the map is ready
-const mapInitialized = () => {
-  // Init the draw control
-  // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
-  const drawnItems = new L.FeatureGroup();
-  map.value.leafletObject.addLayer(drawnItems);
-  const drawControl = new L.Control.Draw({
-      edit: {
-          featureGroup: drawnItems
-      }
-  });
-  map.value.leafletObject.addControl(drawControl);
 }
 </script>
 
-<ClientOnly>
-  <!-- Load Leaflet Draw from cdn -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
-  >
-  <LMap
-    ref="map"
-    style="height: 350px"
-    :zoom="6"
-    :max-zoom="18"
-    :center="[47.21322, -1.559482]"
-    @ready="mapInitialized"
-  >
-    <LTileLayer
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
-      layer-type="base"
-      name="OpenStreetMap"
-    />
-  </LMap>
-</ClientOnly>
+<!-- Load Leaflet Draw CSS from cdn -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+>
+<LMap
+  ref="map"
+  style="height: 350px"
+  :zoom="6"
+  :max-zoom="18"
+  :center="[47.21322, -1.559482]"
+  @ready="mapInitialized"
+>
+  <LTileLayer
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+    layer-type="base"
+    name="OpenStreetMap"
+  />
+</LMap>
 
-````vue
+```vue
 <template>
   <div style="height:100vh; width:100vw">
-    <ClientOnly>
-      <!-- Load Leaflet Draw from cdn -->
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
-      >
-      <Script
-        async
-        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"
+    <!-- Load Leaflet Draw CSS from cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+    >
+    <LMap
+      ref="map"
+      :zoom="6"
+      :max-zoom="18"
+      :center="[47.21322, -1.559482]"
+      @ready="mapInitialized"
+    >
+      <LTileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+        layer-type="base"
+        name="OpenStreetMap"
       />
-      <LMap
-        ref="map"
-        :zoom="6"
-        :max-zoom="18"
-        :center="[47.21322, -1.559482]"
-        @ready="mapInitialized"
-      >
-        <LTileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
-          layer-type="base"
-          name="OpenStreetMap"
-        />
-      </LMap>
-    </ClientOnly>
+    </LMap>
   </div>
 </template>
 
@@ -103,16 +93,25 @@ const map = ref(null)
 
 // When the map is ready
 const mapInitialized = () => {
-  // Init the draw control
-  // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
-  const drawnItems = new L.FeatureGroup();
-  map.value.leafletObject.addLayer(drawnItems);
-  const drawControl = new L.Control.Draw({
-      edit: {
-          featureGroup: drawnItems
-      }
-  });
-  map.value.leafletObject.addControl(drawControl);
+  // Load the Leaflet Draw script
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js';
+  script.async = true;
+  // When it is loaded
+  script.onload = () => {
+    // Init the draw control
+    // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
+    const drawnItems = new L.FeatureGroup();
+    map.value.leafletObject.addLayer(drawnItems);
+    const drawControl = new L.Control.Draw({
+        edit: {
+            featureGroup: drawnItems
+        }
+    });
+    map.value.leafletObject.addControl(drawControl);
+  };
+  // Append the script element to the DOM
+  document.head.appendChild(script);
 }
 </script>
-````
+```
