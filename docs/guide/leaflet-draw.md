@@ -3,7 +3,7 @@
 This shows how to use the Leaflet Draw plugin, by importing the script asynchronously from a CDN.
 
 ::: warning
-This is still very buggy and may not work as expected.
+This is still not proved as stable and may not work as expected.
 :::
 
 ## Demo
