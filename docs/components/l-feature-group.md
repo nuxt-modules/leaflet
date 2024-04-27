@@ -4,7 +4,7 @@ outline: deep
 
 # LFeatureGroup
 
-> Group together elements of the maps including: markers, geoJSON, polylines and polygon, tooltip and popup.
+> Extended [LLayerGroup](/components/l-layer-group.html) that makes it easier to do the same thing to all its member layers.
 
 ::: warning
 This still needs better documentation and examples.
@@ -46,14 +46,11 @@ import { LMap, LTileLayer, LFeatureGroup, LMarker } from '@vue-leaflet/vue-leafl
 
 ## Props
 
-| Prop name   | Description                                          | Type    | Values | Default       |
-| ----------- | ---------------------------------------------------- | ------- | ------ | ------------- |
-| pane        |                                                      | string  | -      | 'overlayPane' |
-| attribution |                                                      | string  | -      | null          |
-| name        |                                                      | string  | -      | undefined     |
-| layerType   |                                                      | string  | -      | undefined     |
-| visible     |                                                      | boolean | -      | true          |
-| options     | Leaflet options to pass to the component constructor | object  | -      | {}            |
+This component does not have any specific props.
+
+### Inherited props
+
+<!--@include: ./props/layer-group-props.md-->
 
 ## Events
 

@@ -4,7 +4,7 @@ outline: deep
 
 # LControlZoom
 
-> Add any custom component as a leaflet control-zoom
+> A basic zoom control with two buttons (zoom in and zoom out).
 
 ## Demo
 
@@ -38,14 +38,16 @@ import { LMap, LTileLayer, LControlZoom } from '@vue-leaflet/vue-leaflet';
 
 ## Props
 
-| Prop name    | Description                                          | Type   | Values | Default    |
-| ------------ | ---------------------------------------------------- | ------ | ------ | ---------- |
-| position     |                                                      | string | -      | 'topright' |
-| options      | Leaflet options to pass to the component constructor | object | -      | {}         |
-| zoomInText   |                                                      | string | -      | '+'        |
-| zoomInTitle  |                                                      | string | -      | 'Zoom in'  |
-| zoomOutText  |                                                      | string | -      | '-'        |
-| zoomOutTitle |                                                      | string | -      | 'Zoom out' |
+| Prop name    | Description                            | Type   | Required | Default    |
+| ------------ | -------------------------------------- | ------ | -------- | ---------- |
+| zoomInText   | The text set on the 'zoom in' button   | String | -        | '+'        |
+| zoomInTitle  | The title set on the 'zoom in' button  | String | -        | 'Zoom in'  |
+| zoomOutText  | The text set on the 'zoom out' button  | String | -        | '-'        |
+| zoomOutTitle | The title set on the 'zoom out' button | String | -        | 'Zoom out' |
+
+### Inherited props
+
+<!--@include: ./props/control-props.md-->
 
 ## Events
 

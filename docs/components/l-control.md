@@ -4,7 +4,7 @@ outline: deep
 
 # LControl
 
-> Add any custom component as a leaflet control
+> Base component for implementing map controls. Handles positioning. All other controls extend from this component.
 
 ## Demo
 
@@ -58,12 +58,14 @@ const clickHandler = () => {
 
 ## Props
 
-| Prop name                | Description                                          | Type    | Values | Default    |
-| ------------------------ | ---------------------------------------------------- | ------- | ------ | ---------- |
-| position                 |                                                      | string  | -      | 'topright' |
-| options                  | Leaflet options to pass to the component constructor | object  | -      | {}         |
-| disableClickPropagation  |                                                      | boolean | -      | true       |
-| disableScrollPropagation |                                                      | boolean | -      | false      |
+| Prop name                | Description | Type    | Required | Default |
+| ------------------------ | ----------- | ------- | -------- | ------- |
+| disableClickPropagation  |             | Boolean | -        | true    |
+| disableScrollPropagation |             | Boolean | -        | false   |
+
+### Inherited props
+
+<!--@include: ./props/control-props.md-->
 
 ## Events
 

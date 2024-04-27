@@ -4,7 +4,7 @@ outline: deep
 
 # LCircleMarker
 
-> A marker in the shape of a circle
+> A circle of a fixed size with radius specified in pixels.
 
 ## Demo
 
@@ -48,7 +48,7 @@ import { LMap, LTileLayer, LCircleMarker } from '@vue-leaflet/vue-leaflet';
 
 | Prop name | Description                          | Type                                | Required | Default |
 | --------- | ------------------------------------ | ----------------------------------- | -------- | ------- |
-| radius    | Radius of the marker in pixels       | Number                              | true     | -       |
+| radius    | Radius of the marker in pixels       | Number                              | true     | 10      |
 | latLng    | Latitude and longitude of the marker | object\|array as L.LatLngExpression | true     | [0, 0]  |
 
 ### Inherited props

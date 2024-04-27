@@ -4,7 +4,7 @@ outline: deep
 
 # LGeoJson
 
-> Easily display a geo-json on the map
+> Represents a GeoJSON object or an array of GeoJSON objects.
 
 ## Demo
 
@@ -74,16 +74,14 @@ onMounted(async () => {
 
 ## Props
 
-| Prop name    | Description                                          | Type          | Values | Default       |
-| ------------ | ---------------------------------------------------- | ------------- | ------ | ------------- |
-| pane         |                                                      | string        | -      | 'overlayPane' |
-| attribution  |                                                      | string        | -      | null          |
-| name         |                                                      | string        | -      | undefined     |
-| layerType    |                                                      | string        | -      | undefined     |
-| visible      |                                                      | boolean       | -      | true          |
-| options      | Leaflet options to pass to the component constructor | object        | -      | {}            |
-| geojson      |                                                      | object\|array | -      | () => ({})    |
-| optionsStyle |                                                      | object\|func  | -      | null          |
+| Prop name    | Description                                                                                                                                                      | Type                           | Required        | Default |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ | --------------- | ------- |
+| geojson      | Should be an object in GeoJSON format (or an array of GeoJSON objects) that will be displayed on the map                                                         | Object\|Array as GeoJsonObject | GeoJsonObject[] | -       | () => ({})
+| optionsStyle | A Function defining the styling for GeoJSON lines and polygons. See more in [original Leaflet documentation](https://leafletjs.com/reference.html#geojson-style) | Function as L.StyleFunction    | -               | *       |
+
+### Inherited props
+
+<!--@include: ./props/layer-group-props.md-->
 
 ## Events
 

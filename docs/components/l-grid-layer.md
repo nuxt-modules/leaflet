@@ -5,7 +5,7 @@ outline: deep
 # LGridLayer
 
 > Creates a map layer where each tile is an instantiated Vue component.
-> Each tile component is given `coords` props by `l-grid-layer` to indicate
+> Each tile component is given `coords` props by `LGridLayer` to indicate
 > the zoom level and position of the tile
 > (see https://leafletjs.com/examples/extending/extending-2-layers.html#lgridlayer-and-dom-elements).
 
@@ -79,19 +79,20 @@ const childRender = (props) => () => {
 
 ## Props
 
-| Prop name     | Description                                          | Type                  | Values | Default    |
-| ------------- | ---------------------------------------------------- | --------------------- | ------ | ---------- |
-| pane          |                                                      | string                | -      | 'tilePane' |
-| attribution   |                                                      | string                | -      | null       |
-| name          |                                                      | string                | -      | undefined  |
-| layerType     |                                                      | string                | -      | undefined  |
-| visible       |                                                      | boolean               | -      | true       |
-| opacity       |                                                      | number                | -      | 1.0        |
-| zIndex        |                                                      | number                | -      | 1          |
-| tileSize      |                                                      | number\|object\|array | -      | 256        |
-| noWrap        |                                                      | boolean               | -      | false      |
-| options       | Leaflet options to pass to the component constructor | object                | -      | {}         |
-| tileComponent |                                                      | object                | -      |            |
+| Prop name   | Description                                                                                                                                                                                                                      | Type            | Required | Default   |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | -------- | --------- |
+| opacity     | Opacity of the tiles                                                                                                                                                                                                             | Number          | -        | 1.0       |
+| zIndex      | The explicit zIndex of the tile layer                                                                                                                                                                                            | Number          | -        | 1         |
+| tileSize    | Width and height of tiles in the grid. Use a number if width and height are equal, or `L.point(width, height)` otherwise.                                                                                                        | Number\|L.Point | -        | 256       |
+| noWrap      | Whether the layer is wrapped around the antimeridian. If true, the GridLayer will only be displayed once at low zoom levels. Has no effect when the [map CRS](https://leafletjs.com/reference.html#map-crs) doesn't wrap around. | Boolean         | -        | false     |
+| childRender |                                                                                                                                                                                                                                  | Function        | true     | *         |
+| minZoom     | The minimum zoom level down to which this layer will be displayed (inclusive)                                                                                                                                                    | Number          | -        | undefined |
+| maxZoom     | The maximum zoom level up to which this layer will be displayed (inclusive)                                                                                                                                                      | Number          | -        | undefined |
+| className   | A custom class name to assign to the tile layer. Empty by default.                                                                                                                                                               | String          | -        | ''        |
+
+### Inherited props
+
+<!--@include: ./props/layer-props.md-->
 
 ## Events
 

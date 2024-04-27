@@ -4,7 +4,7 @@ outline: deep
 
 # LControlAttribution
 
-> Add any custom component as a leaflet control-attribution
+> The attribution control allows you to display attribution data in a small text bos on a map.
 
 ## Demo
 
@@ -38,11 +38,13 @@ import { LMap, LTileLayer, LControlAttribution } from '@vue-leaflet/vue-leaflet'
 
 ## Props
 
-| Prop name | Description                                          | Type            | Values | Default    |
-| --------- | ---------------------------------------------------- | --------------- | ------ | ---------- |
-| position  |                                                      | string          | -      | 'topright' |
-| options   | Leaflet options to pass to the component constructor | object          | -      | {}         |
-| prefix    |                                                      | string\|boolean | -      | null       |
+| Prop name | Description                                                           | Type            | Required | Default   |
+| --------- | --------------------------------------------------------------------- | --------------- | -------- | --------- |
+| prefix    | The HTML text shown before the attributions. Pass `false` to disable. | String\|boolean | -        | 'Leaflet' |
+
+### Inherited props
+
+<!--@include: ./props/control-props.md-->
 
 ## Events
 
