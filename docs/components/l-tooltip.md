@@ -163,10 +163,11 @@ import {
 
 ## Props
 
-| Prop name | Description                                          | Type   | Values | Default |
-| --------- | ---------------------------------------------------- | ------ | ------ | ------- |
-| content   |                                                      | string | -      | null    |
-| options   | Leaflet options to pass to the component constructor | object | -      | {}      |
+This component does not have any specific props.
+
+### Inherited props
+
+<!--@include: ./props/popper-props.md-->
 
 ## Events
 

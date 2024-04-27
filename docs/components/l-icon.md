@@ -127,21 +127,20 @@ const changeIcon = () => {
 
 ## Props
 
-| Prop name       | Description | Type          | Values | Default      |
-| --------------- | ----------- | ------------- | ------ | ------------ |
-| iconUrl         |             | string        | -      | null         |
-| iconRetinaUrl   |             | string        | -      | null         |
-| iconSize        |             | object\|array | -      | null         |
-| iconAnchor      |             | object\|array | -      | null         |
-| popupAnchor     |             | object\|array | -      | () => [0, 0] |
-| tooltipAnchor   |             | object\|array | -      | () => [0, 0] |
-| shadowUrl       |             | string        | -      | null         |
-| shadowRetinaUrl |             | string        | -      | null         |
-| shadowSize      |             | object\|array | -      | null         |
-| shadowAnchor    |             | object\|array | -      | null         |
-| bgPos           |             | object\|array | -      | () => [0, 0] |
-| className       |             | string        | -      | ''           |
-| options         |             | object        | -      | {}           |
+| Prop name       | Description                                                                                                                                                                                                                                               | Type                                                                             | Required | Default |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------- | ------- |
+| iconUrl         | The URL to the icon image (absolute or relative to your script path)                                                                                                                                                                                      | String                                                                           | true     | null    |
+| iconRetinaUrl   | The URL to a retina sized version of the icon image (absolute or relative to your script path). Used for Retina screen devices.                                                                                                                           | String                                                                           | -        | null    |
+| iconSize        | Size of the icon image in pixels                                                                                                                                                                                                                          | Object\|Array as [L.PointExpression](https://leafletjs.com/reference.html#point) | -        | null    |
+| iconAnchor      | The coordinates of the "tip" of the icon (relative to its top left corner). The icon will be aligned so that this point is at the marker's geographical location. Centered by default if size is specified, also can be set in CSS with negative margins. | Object\|Array as [L.PointExpression](https://leafletjs.com/reference.html#point) | -        | null    |
+| popupAnchor     | The coordinates of the point from which popups will "open", relative to the icon anchor                                                                                                                                                                   | Object\|Array as [L.PointExpression](https://leafletjs.com/reference.html#point) | -        | [0, 0]  |
+| tooltipAnchor   | The coordinates of the point from which tooltips will "open", relative to the icon anchor                                                                                                                                                                 | Object\|Array as [L.PointExpression](https://leafletjs.com/reference.html#point) | -        | [0, 0]  |
+| shadowUrl       | The URL to the icon shadow image. If not specified, no shadow image will be created                                                                                                                                                                       | String                                                                           | -        | null    |
+| shadowRetinaUrl |                                                                                                                                                                                                                                                           | String                                                                           | -        | null    |
+| shadowSize      | Size of the shadow image in pixels                                                                                                                                                                                                                        | Object\|Array as [L.PointExpression](https://leafletjs.com/reference.html#point) | -        | null    |
+| shadowAnchor    | The coordinates of the "tip" of the shadow (relative to its top left corner) (the same as iconAnchor if not specified)                                                                                                                                    | Object\|Array as [L.PointExpression](https://leafletjs.com/reference.html#point) | -        | null    |
+| bgPos           |                                                                                                                                                                                                                                                           | Object\|Array as [L.PointExpression](https://leafletjs.com/reference.html#point) | -        | [0, 0]  |
+| className       | A custom class name to assign to both icon and shadow images. Empty by default.                                                                                                                                                                           | String                                                                           | -        | ''      |
 
 ## Slots
 

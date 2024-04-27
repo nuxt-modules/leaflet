@@ -4,7 +4,7 @@ outline: deep
 
 # LMarker
 
-> Marker component, lets you add and personalize markers on the map
+> Used to display clickable/draggable markers on the map.
 
 ## Demo
 
@@ -38,19 +38,16 @@ import { LMap, LTileLayer, LMarker } from '@vue-leaflet/vue-leaflet';
 
 ## Props
 
-| Prop name    | Description                                          | Type          | Values | Default                  |
-| ------------ | ---------------------------------------------------- | ------------- | ------ | ------------------------ |
-| pane         |                                                      | string        | -      | 'markerPane'             |
-| attribution  |                                                      | string        | -      | null                     |
-| name         |                                                      | string        | -      | undefined                |
-| layerType    |                                                      | string        | -      | undefined                |
-| visible      |                                                      | boolean       | -      | true                     |
-| options      | Leaflet options to pass to the component constructor | object        | -      | {}                       |
-| draggable    |                                                      | boolean       | -      | false                    |
-| latLng       |                                                      | object\|array | -      | null                     |
-| icon         |                                                      | object        | -      | () => new Icon.Default() |
-| opacity      |                                                      | number        | -      | 1.0                      |
-| zIndexOffset |                                                      | number        | -      | null                     |
+| Prop name    | Description                                                                                                                                                                                                                           | Type                                                                                                                                                                   | Required | Default                                                               |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------- |
+| draggable    | Whether the marker is draggable with mouse/touch or not                                                                                                                                                                               | Boolean                                                                                                                                                                | -        | false                                                                 |
+| icon         | Icon instance to use for rendering the marker. See [Icon documentation](/components/l-icon.html) for details on how to customize the marker icon.                                                                                     | Object as [L.Icon](https://leafletjs.com/reference.html#icon)                                                                                                          | -        | [L.Icon.Default()](https://leafletjs.com/reference.html#icon-default) |
+| zIndexOffset | By default, marker images zIndex is set automatically based on its latitude. Use this option if you want to put the marker on top of all others (or below), specifying a high value like 1000 (or high negative value, respectively). | Number                                                                                                                                                                 | -        | 0                                                                     |
+| latLng       | The position of the marker                                                                                                                                                                                                            | Object\|Array as [L.LatLngExpression](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/45d34da16d9556b29be0469dbb66337735690feb/types/leaflet/v0/index.d.ts#L4) | true     | null                                                                  |
+
+### Inherited props
+
+<!--@include: ./props/layer-props.md-->
 
 ## Events
 

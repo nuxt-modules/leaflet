@@ -25,7 +25,7 @@ export default defineConfig({
       {
         text: 'Components',
         items: [
-          { text: 'Index', link: '/components/index' },
+          { text: 'Introduction', link: '/components/introduction' },
           { text: 'LCircle', link: '/components/l-circle' },
           { text: 'LCircleMarker', link: '/components/l-circle-marker' },
           { text: 'LControlAttribution', link: '/components/l-control-attribution' },

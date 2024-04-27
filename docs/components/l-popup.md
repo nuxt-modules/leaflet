@@ -163,11 +163,13 @@ import {
 
 ## Props
 
-| Prop name | Description                                          | Type          | Values | Default  |
-| --------- | ---------------------------------------------------- | ------------- | ------ | -------- |
-| content   |                                                      | string        | -      | null     |
-| options   | Leaflet options to pass to the component constructor | object        | -      | {}       |
-| latLng    |                                                      | object\|array | -      | () => [] |
+| Prop name | Description           | Type                                                                                                                                                                   | Required | Default |
+| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| latLng    | Position of the popup | Object\|Array as [L.LatLngExpression](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/45d34da16d9556b29be0469dbb66337735690feb/types/leaflet/v0/index.d.ts#L4) | -        | []      |
+
+### Inherited props
+
+<!--@include: ./props/popper-props.md-->
 
 ## Events
 

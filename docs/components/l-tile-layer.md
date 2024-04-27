@@ -4,7 +4,7 @@ outline: deep
 
 # LTileLayer
 
-> Load tiles from a map server and display them accordingly to map zoom, center and size
+> Load tiles from a map server and display them accordingly to map zoom, center and size.
 
 ## Demo
 
@@ -52,23 +52,15 @@ import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet';
 
 ## Props
 
-| Prop name      | Description                                          | Type                  | Values | Default    |
-| -------------- | ---------------------------------------------------- | --------------------- | ------ | ---------- |
-| pane           |                                                      | string                | -      | 'tilePane' |
-| attribution    |                                                      | string                | -      | null       |
-| name           |                                                      | string                | -      | undefined  |
-| layerType      |                                                      | string                | -      | undefined  |
-| visible        |                                                      | boolean               | -      | true       |
-| opacity        |                                                      | number                | -      | 1.0        |
-| zIndex         |                                                      | number                | -      | 1          |
-| tileSize       |                                                      | number\|object\|array | -      | 256        |
-| noWrap         |                                                      | boolean               | -      | false      |
-| tms            |                                                      | boolean               | -      | false      |
-| subdomains     |                                                      | string\|array         | -      | 'abc'      |
-| detectRetina   |                                                      | boolean               | -      | false      |
-| options        | Leaflet options to pass to the component constructor | object                | -      | {}         |
-| url            |                                                      | string                | -      | null       |
-| tileLayerClass |                                                      | func                  | -      | tileLayer  |
+<!--@include: ./props/tile-layer-props.md-->
+
+### Inherited props
+
+- from [LGridLayer](/components/l-grid-layer)
+
+<!--@include: ./props/grid-layer-props.md-->
+
+<!--@include: ./props/layer-props.md-->
 
 ## Events
 

@@ -74,33 +74,14 @@ import { LMap, LTileLayer, LRectangle } from '@vue-leaflet/vue-leaflet';
 
 ## Props
 
-| Prop name           | Description                                          | Type    | Values | Default             |
-| ------------------- | ---------------------------------------------------- | ------- | ------ | ------------------- |
-| pane                |                                                      | string  | -      | 'overlayPane'       |
-| attribution         |                                                      | string  | -      | null                |
-| name                |                                                      | string  | -      | undefined           |
-| layerType           |                                                      | string  | -      | undefined           |
-| visible             |                                                      | boolean | -      | true                |
-| interactive         |                                                      | boolean | -      | true                |
-| bubblingMouseEvents |                                                      | boolean | -      | true                |
-| lStyle              |                                                      | object  | -      | null                |
-| stroke              |                                                      | boolean | -      | true                |
-| color               |                                                      | string  | -      | '#3388ff'           |
-| weight              |                                                      | number  | -      | 3                   |
-| opacity             |                                                      | number  | -      | 1.0                 |
-| lineCap             |                                                      | string  | -      | 'round'             |
-| lineJoin            |                                                      | string  | -      | 'round'             |
-| dashArray           |                                                      | string  | -      | null                |
-| dashOffset          |                                                      | string  | -      | null                |
-| fill                |                                                      | boolean | -      | true                |
-| fillColor           |                                                      | string  | -      | '#3388ff'           |
-| fillOpacity         |                                                      | number  | -      | 0.2                 |
-| fillRule            |                                                      | string  | -      | 'evenodd'           |
-| className           |                                                      | string  | -      | null                |
-| smoothFactor        |                                                      | number  | -      | 1.0                 |
-| noClip              |                                                      | boolean | -      | false               |
-| options             | Leaflet options to pass to the component constructor | object  | -      | {}                  |
-| bounds              |                                                      | func    | -      | () => [[0,0],[0,0]] |
+| Prop name | Description                                               | Type                                                                                                                                                             | Required | Default       |
+| --------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| latLngs   | Array of coordinates objects that represent the rectangle | Array as [L.LatLngExpression](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/45d34da16d9556b29be0469dbb66337735690feb/types/leaflet/v0/index.d.ts#L4)[] | false    | -             |
+| bounds    |                                                           | Array as [L.LatLngExpression](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/45d34da16d9556b29be0469dbb66337735690feb/types/leaflet/v0/index.d.ts#L4)[] | -        | [[0,0],[0,0]] |
+
+### Inherited props
+
+<!--@include: ./props/polygon-props.md-->
 
 ## Events
 

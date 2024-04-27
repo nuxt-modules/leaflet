@@ -14,7 +14,7 @@ hero:
       link: /getting-started/installation
     - theme: alt
       text: Components
-      link: /components/index
+      link: /components/introduction
 
 features:
   - title: No configuration needed ⚙️

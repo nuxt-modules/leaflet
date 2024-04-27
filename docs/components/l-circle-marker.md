@@ -46,10 +46,10 @@ import { LMap, LTileLayer, LCircleMarker } from '@vue-leaflet/vue-leaflet';
 
 ## Props
 
-| Prop name | Description                          | Type                                | Required | Default |
-| --------- | ------------------------------------ | ----------------------------------- | -------- | ------- |
-| radius    | Radius of the marker in pixels       | Number                              | true     | 10      |
-| latLng    | Latitude and longitude of the marker | object\|array as L.LatLngExpression | true     | [0, 0]  |
+| Prop name | Description                          | Type                                                                                                                                                                   | Required | Default |
+| --------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| radius    | Radius of the marker in pixels       | Number                                                                                                                                                                 | true     | 10      |
+| latLng    | Latitude and longitude of the marker | object\|array as [L.LatLngExpression](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/45d34da16d9556b29be0469dbb66337735690feb/types/leaflet/v0/index.d.ts#L4) | true     | [0, 0]  |
 
 ### Inherited props
 

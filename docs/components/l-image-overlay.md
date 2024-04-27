@@ -4,7 +4,7 @@ outline: deep
 
 # LImageOverlay
 
-> Easily display a image overlay.
+> Used to load and display a single image over specific bounds of the map.
 
 ## Demo
 
@@ -179,24 +179,22 @@ const crs = CRS.Simple;
 
 ## Props
 
-| Prop name           | Description                                          | Type          | Values | Default       |
-| ------------------- | ---------------------------------------------------- | -------       | ------ | ------------- |
-| pane                |                                                      | string        | -      | 'overlayPane' |
-| attribution         |                                                      | string        | -      | null          |
-| name                |                                                      | string        | -      | undefined     |
-| layerType           |                                                      | string        | -      | undefined     |
-| visible             |                                                      | boolean       | -      | true          |
-| interactive         |                                                      | boolean       | -      | false         |
-| bubblingMouseEvents |                                                      | boolean       | -      | true          |
-| url                 |                                                      | string        | -      |               |
-| bounds              |                                                      | array\|object | -      | null          |
-| opacity             |                                                      | number        | -      | 1.0           |
-| alt                 |                                                      | string        | -      | ''            |
-| crossOrigin         |                                                      | boolean       | -      | false         |
-| errorOverlayUrl     |                                                      | string        | -      | ''            |
-| zIndex              |                                                      | number        | -      | 1             |
-| className           |                                                      | string        | -      | ''            |
-| options             | Leaflet options to pass to the component constructor | object        | -      | {}            |
+| Prop name       | Description                                                                                                                           | Type                                                                                                                                                                         | Required | Default |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| opacity         | The opacity of the image overlay                                                                                                      | Number                                                                                                                                                                       | -        | 1.0     |
+| alt             | Text for the alt attribute of the image (useful for accessibility)                                                                    | String                                                                                                                                                                       | -        | ''      |
+| interactive     | If `true`, the image overlay will emit [mouse events](https://leafletjs.com/reference.html#interactive-layer) when clicked or hovered | Boolean                                                                                                                                                                      | -        | false   |
+| crossOrigin     | Whether the crossOrigin attribute will be added to the image                                                                          | Boolean                                                                                                                                                                      | -        | false   |
+| errorOverlayUrl | URL to the overlay image to show in place of the overlay that failed to load                                                          | String                                                                                                                                                                       | -        | ''      |
+| zIndex          | The explicit [zIndex](https://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index) of the overlay layer          | Number                                                                                                                                                                       | -        | 1       |
+| className       | A custom class name to assign to the image. Empty by default.                                                                         | String                                                                                                                                                                       | -        | ''      |
+| url             |                                                                                                                                       | String                                                                                                                                                                       | true     |         |
+| bounds          |                                                                                                                                       | Array\|Object as [L.LatLngBoundsExpression](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/45d34da16d9556b29be0469dbb66337735690feb/types/leaflet/v0/index.d.ts#L5) | true     | null    |
+
+### Inherited props
+
+<!--@include: ./props/layer-props.md-->
+
 ## Events
 
 | Event name     | Type    | Description                                        |

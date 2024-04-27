@@ -4,7 +4,7 @@ outline: deep
 
 # LWmsTileLayer
 
-> Display WMS services as tile layers on the map
+> Display [WMS](https://en.wikipedia.org/wiki/Web_Map_Service) services as tile layers on the map.
 
 ## Demo
 
@@ -46,29 +46,27 @@ import { LMap, LWmsTileLayer } from '@vue-leaflet/vue-leaflet';
 
 ## Props
 
-| Prop name    | Description                                          | Type                  | Values | Default      |
-| ------------ | ---------------------------------------------------- | --------------------- | ------ | ------------ |
-| pane         |                                                      | string                | -      | 'tilePane'   |
-| attribution  |                                                      | string                | -      | null         |
-| name         |                                                      | string                | -      | undefined    |
-| layerType    |                                                      | string                | -      | undefined    |
-| visible      |                                                      | boolean               | -      | true         |
-| opacity      |                                                      | number                | -      | 1.0          |
-| zIndex       |                                                      | number                | -      | 1            |
-| tileSize     |                                                      | number\|object\|array | -      | 256          |
-| noWrap       |                                                      | boolean               | -      | false        |
-| tms          |                                                      | boolean               | -      | false        |
-| subdomains   |                                                      | string\|array         | -      | 'abc'        |
-| detectRetina |                                                      | boolean               | -      | false        |
-| layers       |                                                      | string                | -      | ''           |
-| styles       |                                                      | string                | -      | ''           |
-| format       |                                                      | string                | -      | 'image/jpeg' |
-| transparent  |                                                      | boolean               | -      |              |
-| version      |                                                      | string                | -      | '1.1.1'      |
-| crs          |                                                      | object                | -      | null         |
-| uppercase    |                                                      | boolean               | -      | false        |
-| options      | Leaflet options to pass to the component constructor | object                | -      | {}           |
-| baseUrl      |                                                      | string                | -      | null         |
+| Prop name   | Description                                                                                                                           | Type                                                      | Required | Default      |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | -------- | ------------ |
+| layers      | Comma-separated list of WMS layers to show                                                                                            | String                                                    | true     | ''           |
+| styles      | Comme-separated list of WMS styles                                                                                                    | String                                                    | -        | ''           |
+| format      | WMS image format (use `image/png` for layers with transparency)                                                                       | String                                                    | -        | 'image/jpeg' |
+| transparent | If `true`, the WMS service will return images with transparency                                                                       | boolean                                                   | -        | false        |
+| version     | Version of the WMS service to use                                                                                                     | String                                                    | -        | '1.1.1'      |
+| crs         | Coordinate Reference System to use for the WMS requests, defaults to the map CRS. Don't change this if you're not sure what it means. | Object as [CRS](https://leafletjs.com/reference.html#crs) | -        | null         |
+| uppercase   | If `true`, WMS request parameter keys will be uppercase.                                                                              | Boolean                                                   | -        | false        |
+
+### Inherited props 
+
+- from [LTileLayer](/components/l-tile-layer)
+
+<!--@include: ./props/tile-layer-props.md-->
+
+- from [LGridLayer](/components/l-grid-layer)
+
+<!--@include: ./props/grid-layer-props.md-->
+
+<!--@include: ./props/layer-props.md-->
 
 ## Events
 

@@ -4,7 +4,7 @@ outline: deep
 
 # LLayerGroup
 
-> Group together elements of the maps including: markers, geoJSON, polylines and polygon, tooltip and popup.
+> Use to group several layers and handle them as one. If you add it to the map, any layers added or removed from the group will be added/removed on the map as well.
 
 ::: warning
 This still needs better documentation and examples.
@@ -46,14 +46,11 @@ import { LMap, LTileLayer, LLayerGroup, LMarker } from '@vue-leaflet/vue-leaflet
 
 ## Props
 
-| Prop name   | Description                                          | Type    | Values | Default       |
-| ----------- | ---------------------------------------------------- | ------- | ------ | ------------- |
-| pane        |                                                      | string  | -      | 'overlayPane' |
-| attribution |                                                      | string  | -      | null          |
-| name        |                                                      | string  | -      | undefined     |
-| layerType   |                                                      | string  | -      | undefined     |
-| visible     |                                                      | boolean | -      | true          |
-| options     | Leaflet options to pass to the component constructor | object  | -      | {}            |
+This component does not have any specific props.
+
+### Inherited props
+
+<!--@include: ./props/layer-props.md-->
 
 ## Events
 
