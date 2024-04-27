@@ -3,9 +3,11 @@
 layout: home
 
 hero:
-  name: "Nuxt3 Leaflet"
-  text: "Documentation for the Nuxt3 Leaflet module"
-  tagline: My great project tagline
+  name: "Nuxt Leaflet"
+  text: "Maps without the hassle"
+  image:
+    src: /nuxt-leaflet-logo.png
+    alt: Nuxt Leaflet Logo
   actions:
     - theme: brand
       text: Quick start

@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Nuxt3 Leaflet",
-  description: "Documentation for the Nuxt3 Leaflet module",
+  title: "Nuxt Leaflet",
+  description: "Documentation for the Nuxt Leaflet module",
   head: [['link', { rel: 'icon', href: '/Nuxt-Leaflet/favicon.ico' }]],
   base: '/Nuxt-Leaflet/',
   themeConfig: {
