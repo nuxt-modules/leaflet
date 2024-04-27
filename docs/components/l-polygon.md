@@ -64,9 +64,10 @@ This component does not have any specific props.
 
 ### Inherited props
 
-- from [LPolyline](/components/l-polyline)
+::: details from [LPolyline](/components/l-polyline)
 
 <!--@include: ./props/polyline-props.md-->
+:::
 
 <!--@include: ./props/path-props.md-->
 

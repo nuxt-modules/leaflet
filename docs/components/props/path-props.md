@@ -1,4 +1,4 @@
-- from [path.ts](https://github.com/vue-leaflet/vue-leaflet/blob/master/src/functions/path.ts)
+::: details from [path.ts](https://github.com/vue-leaflet/vue-leaflet/blob/master/src/functions/path.ts)
 
 | Prop name   | Description                                                                                                                                                                                                                                                                                                                                                               | Type    | Required | Default   |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- | --------- |
@@ -16,5 +16,6 @@
 | fillRule    | A string that defines [how the inside of a shape](https://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule) is determined                                                                                                                                                                                                                                           | String  | -        | 'evenodd' |
 | className   | Custom class name set on an element. Only for SVG renderer.                                                                                                                                                                                                                                                                                                               | String  | -        | null      |
 |             |                                                                                                                                                                                                                                                                                                                                                                           |         |          |           |
+:::
 
 <!--@include: ./interactive-layer-props.md-->

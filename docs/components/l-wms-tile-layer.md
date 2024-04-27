@@ -58,13 +58,15 @@ import { LMap, LWmsTileLayer } from '@vue-leaflet/vue-leaflet';
 
 ### Inherited props 
 
-- from [LTileLayer](/components/l-tile-layer)
+::: details from [LTileLayer](/components/l-tile-layer)
 
 <!--@include: ./props/tile-layer-props.md-->
+:::
 
-- from [LGridLayer](/components/l-grid-layer)
+::: details from [LGridLayer](/components/l-grid-layer)
 
 <!--@include: ./props/grid-layer-props.md-->
+:::
 
 <!--@include: ./props/layer-props.md-->
 

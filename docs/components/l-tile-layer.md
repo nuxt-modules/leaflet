@@ -56,9 +56,10 @@ import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet';
 
 ### Inherited props
 
-- from [LGridLayer](/components/l-grid-layer)
+::: details from [LGridLayer](/components/l-grid-layer)
 
 <!--@include: ./props/grid-layer-props.md-->
+:::
 
 <!--@include: ./props/layer-props.md-->
 

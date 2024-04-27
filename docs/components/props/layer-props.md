@@ -1,4 +1,4 @@
-- from [layer.ts](https://github.com/vue-leaflet/vue-leaflet/blob/master/src/functions/layer.ts)
+::: details from [layer.ts](https://github.com/vue-leaflet/vue-leaflet/blob/master/src/functions/layer.ts)
 
 | Prop name   | Description                                                                                                                                                                                               | Type                          | Required | Default       |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | -------- | ------------- |
@@ -7,5 +7,6 @@
 | name        |                                                                                                                                                                                                           | String                        | -        | -             |
 | layerType   |                                                                                                                                                                                                           | String in ["base", "overlay"] | -        | -             |
 | visible     |                                                                                                                                                                                                           | Boolean                       | -        | true          |
+:::
 
 <!--@include: ./component-props.md-->
