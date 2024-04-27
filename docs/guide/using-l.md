@@ -1,12 +1,17 @@
+# Accessing the L global variable
+
+You might want to access the Leaflet global variable in your Vue component. This can be useful if you want to use a Leaflet plugin that is not available as a Vue component.
+
+The L variable is auto-imported by the module, so you can access it directly in your Vue component as shown below.
+
+
+````vue{21-23}
 <template>
   <div style="height:100vh; width:100vw">
-    <h1>Basic Map Exemple</h1>
     <LMap
-      ref="map"
       :zoom="6"
       :max-zoom="18"
       :center="[47.21322, -1.559482]"
-      @ready="mapInitialized"
     >
       <LTileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -18,14 +23,11 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
+<script setup>
+import { onMounted } from 'vue'
 
-const map = ref(null)
-
-// When the map is ready
-const mapInitialized = () => {
-  console.log('Map is ready')
-  console.log(map.value.maxZoom)
-}
+onMounted(() => {
+  console.log(L)
+})
 </script>
+````

@@ -11,6 +11,9 @@
         <li>
           <NuxtLink to="/map/geojson">GeoJson</NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/map/draw">Draw</NuxtLink>
+        </li>
       </ul>
     </nav>
     <NuxtPage />

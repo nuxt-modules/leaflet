@@ -1,0 +1,49 @@
+/* Note : colors were taken from Nuxt branding */
+:root {
+  /* Brand Primary Color */
+  --vp-c-brand-1: #03C169;
+  --vp-c-brand-2: #03C169;
+
+  --vp-button-brand-bg: #03C169;
+
+  /* Backgrounds */
+  --vp-c-bg-alt: #F8FAFC;
+  --vp-c-bg-soft: #F8FAFC;
+
+  /* Sidebar */
+  --vp-sidebar-bg-color: #F8FAFC;
+
+  /* Gray */
+  --vp-c-gray-3: #F8FAFC;
+}
+
+.dark {
+  /* Brand Primary Color */
+  --vp-c-brand-1: #00DC82;
+  --vp-c-brand-2: #00DC82;
+
+  --vp-button-brand-bg: #00DC82;
+
+  /* Backgrounds */
+  --vp-c-bg: #020420;
+  --vp-c-bg-alt: #121A31;
+  --vp-c-bg-elv: #020420;
+  --vp-c-bg-soft: #121A31;
+
+  /* Sidebar */
+  --vp-sidebar-bg-color: #020420;
+
+  /* Gray */
+  --vp-c-gray-3: #121A31;
+
+  /* Primary Button */
+  --vp-button-brand-text: #0F172A;
+  --vp-button-brand-hover-text: #0F172A;
+  --vp-button-brand-active-text: #0F172A;
+  --vp-button-brand-hover-bg: #03C169;
+}
+
+/* Leaflet specific style */
+.leaflet-container {
+  z-index: 0 !important;
+}

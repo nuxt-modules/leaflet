@@ -2,7 +2,7 @@
   <div style="height:100vh; width:100vw">
     <h1>GeoJson Example</h1>
     <LMap
-      :zoom="zoom"
+      :zoom="6"
       :max-zoom="18"
       :center="[47.21322, -1.559482]"
     >
@@ -20,9 +20,8 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
-const zoom = ref(6)
 const geojson = ref(undefined)
 const geoStyler = (feature) => ({
   opacity: feature.properties.code / 100000,

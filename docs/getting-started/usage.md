@@ -1,12 +1,20 @@
+---
+outline: deep
+---
+
+# Usage
+
+Nuxt Leaflet is a module that provides a set of components (from [Vue Leaflet](https://github.com/vue-leaflet/vue-leaflet)) to work with Leaflet in Nuxt 3.
+
+Here is a basic example of how to use the `LMap` and `LTileLayer` components to display a map :
+
+```vue
 <template>
   <div style="height:100vh; width:100vw">
-    <h1>Basic Map Exemple</h1>
     <LMap
       ref="map"
       :zoom="6"
-      :max-zoom="18"
       :center="[47.21322, -1.559482]"
-      @ready="mapInitialized"
     >
       <LTileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -17,15 +25,4 @@
     </LMap>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const map = ref(null)
-
-// When the map is ready
-const mapInitialized = () => {
-  console.log('Map is ready')
-  console.log(map.value.maxZoom)
-}
-</script>
+```
