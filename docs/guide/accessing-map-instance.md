@@ -4,7 +4,7 @@ The guide explains how to access a Leaflet map instance from a Vue component, as
 
 - First add a ref to the `LMap` component.
 
-````vue{4,23}
+```vue{4,23}
 <template>
   <div style="height:100vh; width:100vw">
     <LMap
@@ -29,13 +29,13 @@ import { ref } from 'vue'
 
 const map = ref(null)
 </script>
-````
+```
 
 - Create a `mapInitialized` method that will be called when the map is ready.
 
 You can now access the Leaflet map instance using `map.value.leafletObject`.
 
-````vue{8,26-29}
+```vue{8,26-29}
 <template>
   <div style="height:100vh; width:100vw">
     <LMap
@@ -66,7 +66,7 @@ const mapInitialized = () => {
     console.log(map.value.leafletObject)
 }
 </script>
-````
+```
 
 ::: tip
 This method should work on any Leaflet component, not just `LMap`. You can access the leaflet instance of any component by adding a ref to it and calling `ref.value.leafletObject`.

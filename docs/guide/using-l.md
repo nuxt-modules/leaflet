@@ -5,7 +5,7 @@ You might want to access the Leaflet global variable in your Vue component. This
 The L variable is auto-imported by the module, so you can access it directly in your Vue component as shown below.
 
 
-````vue{21-23}
+```vue{21-23}
 <template>
   <div style="height:100vh; width:100vw">
     <LMap
@@ -30,4 +30,4 @@ onMounted(() => {
   console.log(L)
 })
 </script>
-````
+```

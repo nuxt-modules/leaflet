@@ -13,10 +13,8 @@ The demo still needs to be fixed.
 :::
 
 <script setup lang="ts">
-import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { CRS } from "leaflet/dist/leaflet-src.esm";
-import { computed, ref } from "vue";
+import { computed, ref, onMounted } from "vue";
 import { LMap, LTileLayer, LImageOverlay, LMarker, LPopup } from "@vue-leaflet/vue-leaflet";
 
 const imageOverlayUrl = ref(
@@ -36,6 +34,15 @@ const markers = ref([
   { coordinates: { lng: 100, lat: 50 } },
 ]);
 
+onMounted(() => {
+  import('leaflet')
+})
+
+// When map is ready
+const mapInitialized = () => {
+  crs.value = L.CRS.Simple;
+};
+
 const bounds = computed(
   () =>
     [
@@ -43,10 +50,12 @@ const bounds = computed(
       [height.value, width.value],
     ] as L.LatLngBoundsLiteral
 );
-const crs = CRS.Simple;
+const crs = ref(null);
 </script>
 
 <LMap
+  ref="map"
+  @ready="mapInitialized"
   style="height: 350px"
   :zoom="1"
   :crs="crs"

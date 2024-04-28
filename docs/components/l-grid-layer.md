@@ -25,10 +25,13 @@ outline: deep
 ## Demo
 
 <script setup>
-import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer, LGridLayer } from '@vue-leaflet/vue-leaflet';
-import { h } from 'vue'
+import { h, onMounted } from 'vue';
+
+onMounted(() => {
+  import('leaflet')
+})
 
 const childRender = (props) => () => {
   return h(

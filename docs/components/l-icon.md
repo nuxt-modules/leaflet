@@ -9,7 +9,7 @@ outline: deep
 ## Demo
 
 <script setup>
-import L from "leaflet";
+ 
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer, LMarker, LIcon } from '@vue-leaflet/vue-leaflet';
 import { ref, computed } from 'vue'
@@ -96,7 +96,11 @@ const changeIcon = () => {
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue';
+
+onMounted(() => {
+  import('leaflet')
+})
 
 const iconWidth = ref(21);
 const iconHeight = ref(42);

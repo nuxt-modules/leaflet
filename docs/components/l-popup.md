@@ -13,7 +13,6 @@ Popup placed inside a marker will by default appear on marker click.
 ## Demo
 
 <script setup>
-import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import {
   LCircle,
@@ -27,6 +26,11 @@ import {
   LRectangle,
   LTileLayer
 } from '@vue-leaflet/vue-leaflet';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  import('leaflet')
+})
 </script>
 
 <LMap style="height: 350px" :zoom="9" :center="[41.8329, -87.7327]">

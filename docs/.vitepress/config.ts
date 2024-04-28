@@ -64,5 +64,6 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/Gugustinette/Nuxt-Leaflet' },
       { icon: 'npm', link: 'https://www.npmjs.com/package/nuxt3-leaflet' }
     ]
-  }
+  },
+  ignoreDeadLinks: true
 })

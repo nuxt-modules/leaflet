@@ -9,34 +9,59 @@ This is still not proved as stable and may not work as expected.
 ## Demo
 
 <script setup lang="ts">
-import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-const map = ref(null)
+const map = ref(null);
+
+let wasLeafletDrawLoaded = false;
+
+onMounted(() => {
+  import('leaflet').then(() => {
+    console.log('Leaflet loaded');
+    setTimeout(() => {
+      // Load the Leaflet Draw script
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js';
+      script.async = true;
+      // When it is loaded
+      script.onload = () => {
+        console.log('Leaflet Draw loaded');
+        wasLeafletDrawLoaded = true;
+        if (map.value.leafletObject) {
+          setupLeafletDraw();
+        }
+      };
+      // Append the script element to the DOM
+      document.head.appendChild(script);
+    }, 2000);
+  });
+})
 
 // When the map is ready
 const mapInitialized = () => {
-  // Load the Leaflet Draw script
-  const script = document.createElement('script');
-  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js';
-  script.async = true;
-  // When it is loaded
-  script.onload = () => {
-    // Init the draw control
-    // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
-    const drawnItems = new L.FeatureGroup();
-    map.value.leafletObject.addLayer(drawnItems);
-    const drawControl = new L.Control.Draw({
-        edit: {
-            featureGroup: drawnItems
-        }
-    });
-    map.value.leafletObject.addControl(drawControl);
-  };
-  // Append the script element to the DOM
-  document.head.appendChild(script);
+  if (!wasLeafletDrawLoaded) {
+    console.log('Leaflet Draw not loaded yet');
+    return;
+  }
+  setTimeout(() => {
+    setupLeafletDraw();
+  }, 2000);
+}
+
+const setupLeafletDraw = () => {
+  console.log('Setting up Leaflet Draw');
+  // Init the draw control
+  // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
+  const drawnItems = new L.FeatureGroup();
+  map.value.leafletObject.addLayer(drawnItems);
+  const drawControl = new L.Control.Draw({
+      edit: {
+          featureGroup: drawnItems
+      }
+  });
+  map.value.leafletObject.addControl(drawControl);
 }
 </script>
 

@@ -13,9 +13,13 @@ This still needs better documentation and examples.
 ## Demo
 
 <script setup>
-import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer, LFeatureGroup, LMarker } from '@vue-leaflet/vue-leaflet';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  import('leaflet')
+})
 </script>
 
 <LMap style="height: 350px" :zoom="8" :center="[47.21322, -1.559482]">
