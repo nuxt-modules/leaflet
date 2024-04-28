@@ -15,51 +15,28 @@ import { ref, onMounted } from 'vue';
 
 const map = ref(null);
 
-let wasLeafletDrawLoaded = false;
-
 onMounted(() => {
+  // Load Leaflet script
   import('leaflet').then(() => {
-    console.log('Leaflet loaded');
-    setTimeout(() => {
-      // Load the Leaflet Draw script
-      const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js';
-      script.async = true;
-      // When it is loaded
-      script.onload = () => {
-        console.log('Leaflet Draw loaded');
-        wasLeafletDrawLoaded = true;
-        if (map.value.leafletObject) {
-          setupLeafletDraw();
-        }
-      };
-      // Append the script element to the DOM
-      document.head.appendChild(script);
-    }, 2000);
+    // Load Leaflet Draw script
+    import('https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js').then(() => {
+      // Setup Leaflet Draw
+      setTimeout(() => {
+        setupLeafletDraw();
+      }, 1000);
+    });
   });
 })
 
-// When the map is ready
-const mapInitialized = () => {
-  if (!wasLeafletDrawLoaded) {
-    console.log('Leaflet Draw not loaded yet');
-    return;
-  }
-  setTimeout(() => {
-    setupLeafletDraw();
-  }, 2000);
-}
-
 const setupLeafletDraw = () => {
-  console.log('Setting up Leaflet Draw');
   // Init the draw control
   // See https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-feature
   const drawnItems = new L.FeatureGroup();
   map.value.leafletObject.addLayer(drawnItems);
   const drawControl = new L.Control.Draw({
-      edit: {
-          featureGroup: drawnItems
-      }
+    edit: {
+      featureGroup: drawnItems
+    }
   });
   map.value.leafletObject.addControl(drawControl);
 }
@@ -76,7 +53,6 @@ const setupLeafletDraw = () => {
   :zoom="6"
   :max-zoom="18"
   :center="[47.21322, -1.559482]"
-  @ready="mapInitialized"
 >
   <LTileLayer
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
