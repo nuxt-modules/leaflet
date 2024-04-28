@@ -12,7 +12,7 @@ This module is really just about making it work with Nuxt 3 without the need to 
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt3-leaflet?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
+- [📖 &nbsp;Documentation](https://gugustinette.github.io/Nuxt-Leaflet)
 
 ## Features
 
@@ -30,7 +30,7 @@ That's it! You can now use Leaflet in your Nuxt app ✨
 
 ## Usage
 
-For a complete list of the components available, check out the original [Vue Leaflet](https://github.com/vue-leaflet/vue-leaflet) library.
+For a complete list of the components available, check out the [official documentation](https://gugustinette.github.io/Nuxt-Leaflet/components/introduction.html) library.
 
 Please note that components are exported in PascalCase, so for example, write `<LMap>` instead of `<l-map>`.
 
@@ -103,4 +103,4 @@ npm run release
 [license-href]: https://npmjs.com/package/nuxt3-leaflet
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
-[nuxt-href]: https://nuxt.com
+[nuxt-href]: https://nuxt.com/modules/nuxt3-leaflet
