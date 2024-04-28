@@ -4,9 +4,21 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'src/**'
+      - 'test/**'
+      - 'playground/**'
   pull_request:
     branches:
       - main
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'src/**'
+      - 'test/**'
+      - 'playground/**'
 
 jobs:
     publish:

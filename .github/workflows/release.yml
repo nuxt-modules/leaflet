@@ -22,13 +22,17 @@ jobs:
           run: npm run test
         - name: Prepack
           run: npm run prepack
+        # Configure Git for automated commits
         - name: Configuring Git
           run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@users.noreply.github.com"
+        # Bump package version
         - name: Update package version
           run: npm --no-git-tag-version version ${{ github.event.release.tag_name }}
-        # - name: Publish package to NPM
-        #   run: npm publish
-        #   env:
-        #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # Publish package to NPM
+        - name: Publish package to NPM
+          run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # Push changes to GitHub (package.json and package-lock.json)
         - name: Push changes to GitHub
           run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main
