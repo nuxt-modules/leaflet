@@ -8,7 +8,7 @@ jobs:
     publish:
         runs-on: ubuntu-latest
         steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v3
         - uses: actions/setup-node@v2
           with:
             node-version: 18
@@ -23,10 +23,12 @@ jobs:
         - name: Prepack
           run: npm run prepack
         - name: Configuring Git
-          run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@example.com"
+          run: git config --global user.name "GitHub CD bot" && git config --global user.email "github-cd-bot@users.noreply.github.com"
         - name: Update package version
-          run: npm version ${{ github.event.release.tag_name }}
-        - name: Publish package to NPM
-          run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          run: npm --no-git-tag-version version ${{ github.event.release.tag_name }}
+        # - name: Publish package to NPM
+        #   run: npm publish
+        #   env:
+        #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        - name: Push changes to GitHub
+          run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push
