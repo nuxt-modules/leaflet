@@ -5,22 +5,20 @@ You might want to access the Leaflet global variable in your Vue component. This
 The L variable is auto-imported by the module, so you can access it directly in your Vue component as shown below.
 
 
-```vue{21-23}
+```vue{19-21}
 <template>
-  <div style="height:100vh; width:100vw">
-    <LMap
-      :zoom="6"
-      :max-zoom="18"
-      :center="[47.21322, -1.559482]"
-    >
-      <LTileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
-        layer-type="base"
-        name="OpenStreetMap"
-      />
-    </LMap>
-  </div>
+  <LMap
+    :zoom="6"
+    :max-zoom="18"
+    :center="[47.21322, -1.559482]"
+  >
+    <LTileLayer
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+      layer-type="base"
+      name="OpenStreetMap"
+    />
+  </LMap>
 </template>
 
 <script setup>
