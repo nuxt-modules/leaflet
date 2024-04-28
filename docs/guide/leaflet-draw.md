@@ -1,6 +1,6 @@
 # Leaflet Draw (Experimental)
 
-This shows how to use the Leaflet Draw plugin, by importing the script asynchronously from a CDN.
+This shows how to use the [Leaflet Draw](https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html) plugin, by importing the script asynchronously from a CDN.
 
 ::: warning
 This is still not proved as stable and may not work as expected.
