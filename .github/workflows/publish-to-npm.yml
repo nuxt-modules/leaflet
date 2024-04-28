@@ -31,4 +31,4 @@ jobs:
         #   env:
         #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         - name: Push changes to GitHub
-          run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push
+          run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main
