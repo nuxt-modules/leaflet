@@ -103,4 +103,4 @@ npm run release
 [license-href]: https://npmjs.com/package/nuxt3-leaflet
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
-[nuxt-href]: https://nuxt.com/modules/nuxt3-leaflet
+[nuxt-href]: https://nuxt.com
