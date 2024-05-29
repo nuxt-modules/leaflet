@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.0.13
+
+This release drops the old `leaflet-runtime.ts` to take advantage of the [Vue Leaflet behavior](https://github.com/vue-leaflet/vue-leaflet/blob/db34dff79cc62bc6fa51357e953e9bcf55725c94/src/components/LMap.vue#L250-L256) when importing Leaflet.
+This prevent Leaflet from being imported literally everywhere in the app, even if it isn't used.
+
+### 🏡 Chore
+
+- **Drop Leaflet runtime import:** [#1](https://github.com/Gugustinette/Nuxt-Leaflet/issues/1)
+
+### ❤️  Contributors
+
+- Gugustinette <mercier.augustin@outlook.fr>
+- Daniel Roe <daniel@roe.dev>
+
 ## v1.0.12
 
 Initial Release
