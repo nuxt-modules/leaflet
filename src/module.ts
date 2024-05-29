@@ -1,5 +1,4 @@
-import { defineNuxtModule, addComponent, addPlugin } from '@nuxt/kit'
-import path from 'path'
+import { defineNuxtModule, addComponent } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
@@ -42,12 +41,6 @@ export default defineNuxtModule<ModuleOptions>({
   async setup (options, nuxt) {
     // Add Leaflet's CSS
     nuxt.options.css.push('leaflet/dist/leaflet.css')
-
-    // Add Leaflet's JS
-    addPlugin({
-      src: path.resolve(__dirname, 'runtime/leaflet-runtime'),
-      mode: 'client'
-    })
 
     // Export Vue Leaflet components
     for (const component of components) {
