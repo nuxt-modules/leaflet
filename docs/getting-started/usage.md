@@ -14,6 +14,7 @@ Here is a basic example of how to use the `LMap` and `LTileLayer` components to 
     style="height: 350px"
     :zoom="6"
     :center="[47.21322, -1.559482]"
+    :use-global-leaflet="false"
   >
     <LTileLayer
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
