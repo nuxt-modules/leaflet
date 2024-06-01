@@ -23,6 +23,14 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Guide',
+        items: [
+          { text: 'Using L', link: '/guide/using-l' },
+          { text: 'Accessing Map Instance', link: '/guide/accessing-map-instance' },
+          { text: 'Leaflet Draw (Experimental)', link: '/guide/leaflet-draw' }
+        ]
+      },
+      {
         text: 'Components',
         items: [
           { text: 'Introduction', link: '/components/introduction' },
@@ -48,14 +56,6 @@ export default defineConfig({
           { text: 'LTileLayer', link: '/components/l-tile-layer' },
           { text: 'LTooltip', link: '/components/l-tooltip' },
           { text: 'LWmsTileLayer', link: '/components/l-wms-tile-layer' },
-        ]
-      },
-      {
-        text: 'Guide',
-        items: [
-          { text: 'Using L', link: '/guide/using-l' },
-          { text: 'Accessing Map Instance', link: '/guide/accessing-map-instance' },
-          { text: 'Leaflet Draw (Experimental)', link: '/guide/leaflet-draw' }
         ]
       }
     ],

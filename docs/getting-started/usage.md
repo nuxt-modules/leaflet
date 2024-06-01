@@ -46,3 +46,7 @@ onMounted(() => {
     name="OpenStreetMap"
   />
 </LMap>
+
+::: tip
+Note that you can set the `use-global-leaflet` prop to `true` (or remove it) if you're allready importing Leaflet in your app with `import L from 'leaflet'`.
+:::
