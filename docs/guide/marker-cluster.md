@@ -1,3 +1,28 @@
+# Using Leaflet.markercluster
+
+The guide explains how to use the [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) plugin.
+A dedicated composable is available to help you use this plugin.
+
+- First install markercluster
+
+```bash
+npm install leaflet.markercluster
+```
+
+- Update your Nuxt config to activate the plugin
+
+```ts{3-5}
+export default defineNuxtConfig({
+  modules: ['nuxt3-leaflet'],
+  nuxtLeaflet: {
+    markercluster: true
+  }
+})
+```
+
+- Use the `useMarkerCluster` composable in your component
+
+```vue{52-55}
 <template>
   <div style="height:100vh; width:100vw">
     <h1>Marker Cluster</h1>
@@ -23,7 +48,7 @@ import { ref } from 'vue';
 
 const map = ref(null)
 
-// Create locations data (20 locations around Nantes)
+// Create locations data
 const locations = [
   { name: 'Nantes', lat: 47.218371, lng: -1.553621 },
   { name: 'Saint-Nazaire', lat: 47.273018, lng: -2.213733 },
@@ -55,3 +80,4 @@ const onMapReady = () => {
   });
 }
 </script>
+```
