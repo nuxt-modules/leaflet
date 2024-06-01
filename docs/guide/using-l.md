@@ -5,7 +5,7 @@ You might want to access the Leaflet global variable in your Vue component. This
 You can still import the `L` global variable from the `leaflet` package and use it in your Vue component. Here is an example of how you can access the `L` global variable in a Vue component.
 
 ::: warning
-This is only possible in a client-side environment. If you are using Nuxt.js, you should use the `client-only` component to ensure that the code is only executed on the client side or set your map route to `ssr: false`.
+This is only possible in a client-side environment. You should use the `client-only` component to ensure that the code is only executed on the client side or set your map route to `ssr: false`.
 :::
 
 ```vue{6,18,21-23}
