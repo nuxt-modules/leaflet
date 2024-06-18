@@ -25,8 +25,15 @@ const map = ref(null)
 
 // Create locations data (20 locations around Nantes)
 const locations = [
-  { name: 'Nantes', lat: 47.218371, lng: -1.553621 },
-  { name: 'Saint-Nazaire', lat: 47.273018, lng: -2.213733 },
+  { name: 'Nantes', lat: 47.218371, lng: -1.553621, options: {
+    // Standard Leaflet Marker options
+    draggable: true,
+  } },
+  {
+    // name is optional (no tooltip will be displayed if not provided)
+    /* name: 'Saint-Nazaire', */
+    lat: 47.273018, lng: -2.213733 
+  },
   { name: 'La Baule', lat: 47.286835, lng: -2.393108 },
   { name: 'Pornic', lat: 47.112, lng: -2.102 },
   { name: 'Guérande', lat: 47.328, lng: -2.429 },

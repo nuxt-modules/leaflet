@@ -2,7 +2,7 @@ import { defineNuxtModule, addComponent, createResolver, addImports } from '@nux
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  markercluster?: boolean
+  markerCluster?: boolean
 }
 
 // Components to export
@@ -33,7 +33,7 @@ export const components = [
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-leaflet',
-    configKey: 'nuxtLeaflet',
+    configKey: 'leaflet',
     compatibility: {
       nuxt: '^3.0.0'
     }
@@ -58,8 +58,8 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
 
-    // If markercluster is enabled
-    if (options.markercluster) {
+    // If leaflet.markercluster is enabled
+    if (options.markerCluster) {
       // Add Leaflet MarkerCluster CSS
       nuxt.options.css.push('leaflet.markercluster/dist/MarkerCluster.css')
       nuxt.options.css.push('leaflet.markercluster/dist/MarkerCluster.Default.css')

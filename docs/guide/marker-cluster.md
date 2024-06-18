@@ -3,6 +3,10 @@
 The guide explains how to use the [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) plugin.
 A dedicated composable is available to help you use this plugin.
 
+Options for the markers are the same as the ones available in the [Leaflet documentation](https://leafletjs.com/reference.html#marker).
+
+## Installation
+
 - First install markercluster
 
 ```bash
@@ -14,15 +18,15 @@ npm install leaflet.markercluster
 ```ts{3-5}
 export default defineNuxtConfig({
   modules: ['nuxt3-leaflet'],
-  nuxtLeaflet: {
-    markercluster: true
+  leaflet: {
+    markerCluster: true
   }
 })
 ```
 
 - Use the `useMarkerCluster` composable in your component
 
-```vue{52-55}
+```vue{26-55,59-62}
 <template>
   <div style="height:100vh; width:100vw">
     <h1>Marker Cluster</h1>
@@ -48,10 +52,17 @@ import { ref } from 'vue';
 
 const map = ref(null)
 
-// Create locations data
+// Create locations data (20 locations around Nantes)
 const locations = [
-  { name: 'Nantes', lat: 47.218371, lng: -1.553621 },
-  { name: 'Saint-Nazaire', lat: 47.273018, lng: -2.213733 },
+  { name: 'Nantes', lat: 47.218371, lng: -1.553621, options: {
+    // Standard Leaflet Marker options
+    draggable: true,
+  } },
+  {
+    // name is optional (no tooltip will be displayed if not provided)
+    /* name: 'Saint-Nazaire', */
+    lat: 47.273018, lng: -2.213733 
+  },
   { name: 'La Baule', lat: 47.286835, lng: -2.393108 },
   { name: 'Pornic', lat: 47.112, lng: -2.102 },
   { name: 'Guérande', lat: 47.328, lng: -2.429 },

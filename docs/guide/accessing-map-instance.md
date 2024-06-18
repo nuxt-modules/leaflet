@@ -1,4 +1,4 @@
-# Accessing a Map Instance
+# Accessing a map instance
 
 The guide explains how to access a Leaflet map instance from a Vue component, as featured in the [original vue-leaflet library](https://github.com/vue-leaflet/vue-leaflet/blob/master/docs/faq/index.md#how-can-i-access-the-leaflet-map-object).
 

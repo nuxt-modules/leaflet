@@ -1,16 +1,21 @@
-import { markerProps } from '@vue-leaflet/vue-leaflet/dist/src/functions/marker';
+import type { MarkerOptions } from 'leaflet';
+
+interface MarkerProps {
+  name?: string;
+  lat: number;
+  lng: number;
+  options?: MarkerOptions;
+}
 
 interface Props {
   mapInstance: any;
-  markers: {
-    name: string;
-    lat: number;
-    lng: number;
-    options?: typeof markerProps;
-  }[];
+  markers: MarkerProps[];
 }
 
 export const useMarkerCluster = async (props: Props) => {
+  // Get Leaflet from the window object
+  const L = window.L;
+
   // Import MarkerClusterGroup from leaflet.markercluster
   // This is a dynamic import, so it will only be loaded when this function is called
   // Also, importing it at the top level will cause errors because it could be loaded before the Leaflet library
@@ -24,7 +29,7 @@ export const useMarkerCluster = async (props: Props) => {
     // Create a Leaflet marker
     const marker = L.marker([location.lat, location.lng], {
       title: location.name,
-      draggable: false
+      ...location.options,
     });
 
     // Add the marker to the cluster

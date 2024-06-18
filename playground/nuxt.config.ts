@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/Nuxt-Leaflet/'
   },
-  nuxtLeaflet: {
-    markercluster: true
+  leaflet: {
+    markerCluster: true
   }
 })

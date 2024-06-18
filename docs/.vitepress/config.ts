@@ -26,13 +26,13 @@ export default defineConfig({
         text: 'Guide',
         items: [
           { text: 'Using L', link: '/guide/using-l' },
-          { text: 'Accessing Map Instance', link: '/guide/accessing-map-instance' },
-          { text: 'Leaflet.markercluster', link: '/guide/marker-cluster' },
-          { text: 'Leaflet Draw (Experimental)', link: '/guide/leaflet-draw' }
+          { text: 'Accessing a map instance', link: '/guide/accessing-map-instance' },
+          { text: 'Leaflet.markercluster', link: '/guide/marker-cluster' }
         ]
       },
       {
         text: 'Components',
+        collapsed: true,
         items: [
           { text: 'Introduction', link: '/components/introduction' },
           { text: 'LCircle', link: '/components/l-circle' },
@@ -58,7 +58,13 @@ export default defineConfig({
           { text: 'LTooltip', link: '/components/l-tooltip' },
           { text: 'LWmsTileLayer', link: '/components/l-wms-tile-layer' },
         ]
-      }
+      },
+      {
+        text: 'About',
+        items: [
+          { text: 'Q&A', link: '/about/q&a' },
+        ]
+      },
     ],
 
     socialLinks: [
