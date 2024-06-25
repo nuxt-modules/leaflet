@@ -3,9 +3,13 @@
 ## v1.0.14
 
 This release is a migration from the old `nuxt3-leaflet` module to the new `@nuxtjs/leaflet` module.
-It includes the exact same features as version `1.0.13` of the old module.
+It includes the same features as version `1.0.13` of the old module, but also enable compatibility with Nuxt 4.
 
 Consider that this is the new module's first stable release, as previous versions are not available on npm through the `@nuxtjs` namespace.
+
+### 🏡 Chore
+
+- **Indicate compatibility with Nuxt 4** : [commit](https://github.com/nuxt-modules/leaflet/commit/00f81c18ff80341fdefecec0a0b56d067adbd524)
 
 ### ❤️  Contributors
 
