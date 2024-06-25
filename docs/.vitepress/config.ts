@@ -4,8 +4,8 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Nuxt Leaflet",
   description: "Documentation for the Nuxt Leaflet module",
-  head: [['link', { rel: 'icon', href: '/leaflet/favicon.ico' }]],
-  base: '/leaflet/',
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  base: '/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
