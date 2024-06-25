@@ -32,8 +32,6 @@ That's it! You can now use Leaflet in your Nuxt app ✨
 
 For a complete list of the components available, check out the [official documentation](https://leaflet.nuxtjs.org/components/introduction.html) library.
 
-Please note that components are exported in PascalCase, so for example, write `<LMap>` instead of `<l-map>`.
-
 ### Basic
 
 ```vue
@@ -43,6 +41,7 @@ Please note that components are exported in PascalCase, so for example, write `<
       ref="map"
       :zoom="zoom"
       :center="[47.21322, -1.559482]"
+      :use-global-leaflet="false"
     >
       <LTileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
