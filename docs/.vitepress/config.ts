@@ -4,8 +4,8 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Nuxt Leaflet",
   description: "Documentation for the Nuxt Leaflet module",
-  head: [['link', { rel: 'icon', href: '/Nuxt-Leaflet/favicon.ico' }]],
-  base: '/Nuxt-Leaflet/',
+  head: [['link', { rel: 'icon', href: '/leaflet/favicon.ico' }]],
+  base: '/leaflet/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -61,8 +61,8 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Gugustinette/Nuxt-Leaflet' },
-      { icon: 'npm', link: 'https://www.npmjs.com/package/nuxt3-leaflet' }
+      { icon: 'github', link: 'https://github.com/nuxt-modules/leaflet' },
+      { icon: 'npm', link: 'https://www.npmjs.com/package/@nuxtjs/leaflet' }
     ],
 
     search: {
