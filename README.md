@@ -5,10 +5,10 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-A Nuxt 3 module to use Leaflet.
+A Nuxt module to use Leaflet.
 It was made using [Vue Leaflet](https://github.com/vue-leaflet/vue-leaflet) which is a Vue 3 wrapper for Leaflet, that exposes the original Leaflet API as Vue components.
 
-This module is really just about making it work with Nuxt 3 without the need to configure anything.
+This module is really just about making it work with Nuxt without the need to configure anything.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 <!-- - [🏀 Online playground](https://stackblitz.com/github/nuxtjs/leaflet?file=playground%2Fapp.vue) -->
@@ -57,12 +57,6 @@ For a complete list of the components available, check out the [official documen
 import { ref } from 'vue'
 const zoom = ref(6)
 </script>
-
-<style>
-body {
-  margin: 0;
-}
-</style>
 ```
 
 ## Development
