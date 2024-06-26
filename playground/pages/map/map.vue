@@ -6,7 +6,7 @@
       :zoom="6"
       :max-zoom="18"
       :center="[47.21322, -1.559482]"
-	  :use-global-leaflet="false"
+      :use-global-leaflet="false"
       @ready="onMapReady"
     >
       <LTileLayer

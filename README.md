@@ -1,3 +1,5 @@
+[![@nuxtjs/leaflet](./docs/public/cover.png)](https://leaflet.nuxtjs.org)
+
 # Nuxt Leaflet
 
 [![npm version][npm-version-src]][npm-version-href]
