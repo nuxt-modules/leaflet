@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     }
   },
   app: {
-    baseURL: '/Nuxt-Leaflet/'
+    baseURL: '/'
   },
   leaflet: {
     markerCluster: true
