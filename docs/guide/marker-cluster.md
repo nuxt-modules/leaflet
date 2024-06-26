@@ -17,7 +17,7 @@ npm install leaflet.markercluster
 
 ```ts{3-5}
 export default defineNuxtConfig({
-  modules: ['nuxt3-leaflet'],
+  modules: ['@nuxtjs/leaflet'],
   leaflet: {
     markerCluster: true
   }
