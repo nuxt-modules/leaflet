@@ -5,14 +5,14 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-A Nuxt 3 module to use Leaflet.
+A Nuxt module to use Leaflet.
 It was made using [Vue Leaflet](https://github.com/vue-leaflet/vue-leaflet) which is a Vue 3 wrapper for Leaflet, that exposes the original Leaflet API as Vue components.
 
-This module is really just about making it work with Nuxt 3 without the need to configure anything.
+This module is really just about making it work with Nuxt without the need to configure anything.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt3-leaflet?file=playground%2Fapp.vue) -->
-- [📖 &nbsp;Documentation](https://gugustinette.github.io/Nuxt-Leaflet)
+<!-- - [🏀 Online playground](https://stackblitz.com/github/nuxtjs/leaflet?file=playground%2Fapp.vue) -->
+- [📖 &nbsp;Documentation](https://leaflet.nuxtjs.org)
 
 ## Features
 
@@ -23,16 +23,14 @@ This module is really just about making it work with Nuxt 3 without the need to 
 ## Quick Setup
 
 ```bash
-npx nuxi@latest module add nuxt3-leaflet
+npx nuxi@latest module add @nuxtjs/leaflet
 ```
 
 That's it! You can now use Leaflet in your Nuxt app ✨
 
 ## Usage
 
-For a complete list of the components available, check out the [official documentation](https://gugustinette.github.io/Nuxt-Leaflet/components/introduction.html) library.
-
-Please note that components are exported in PascalCase, so for example, write `<LMap>` instead of `<l-map>`.
+For a complete list of the components available, check out the [official documentation](https://leaflet.nuxtjs.org/components/introduction.html) library.
 
 ### Basic
 
@@ -43,6 +41,7 @@ Please note that components are exported in PascalCase, so for example, write `<
       ref="map"
       :zoom="zoom"
       :center="[47.21322, -1.559482]"
+      :use-global-leaflet="false"
     >
       <LTileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -58,12 +57,6 @@ Please note that components are exported in PascalCase, so for example, write `<
 import { ref } from 'vue'
 const zoom = ref(6)
 </script>
-
-<style>
-body {
-  margin: 0;
-}
-</style>
 ```
 
 ## Development
@@ -93,14 +86,14 @@ npm run release
 ```
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/nuxt3-leaflet/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-version-href]: https://npmjs.com/package/nuxt3-leaflet
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/leaflet/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://www.npmjs.com/package/@nuxtjs/leaflet
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt3-leaflet.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-downloads-href]: https://npmjs.com/package/nuxt3-leaflet
+[npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/leaflet.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://www.npmjs.com/package/@nuxtjs/leaflet
 
-[license-src]: https://img.shields.io/npm/l/nuxt3-leaflet.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/nuxt3-leaflet
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/leaflet.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://www.npmjs.com/package/@nuxtjs/leaflet
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com

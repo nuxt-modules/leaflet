@@ -14,6 +14,7 @@ Here is a basic example of how to use the `LMap` and `LTileLayer` components to 
     style="height: 350px"
     :zoom="6"
     :center="[47.21322, -1.559482]"
+    :use-global-leaflet="false"
   >
     <LTileLayer
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -45,3 +46,7 @@ onMounted(() => {
     name="OpenStreetMap"
   />
 </LMap>
+
+::: tip
+Note that you can set the `use-global-leaflet` prop to `true` (or remove it) if you're allready importing Leaflet in your app with `import L from 'leaflet'`.
+:::

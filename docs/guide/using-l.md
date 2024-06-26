@@ -2,15 +2,19 @@
 
 You might want to access the Leaflet global variable in your Vue component. This can be useful if you want to use a Leaflet plugin that is not available as a Vue component.
 
-The L variable is auto-imported by the module, so you can access it directly in your Vue component as shown below.
+You can still import the `L` global variable from the `leaflet` package and use it in your Vue component. Here is an example of how you can access the `L` global variable in a Vue component.
 
+::: warning
+This is only possible in a client-side environment. You should use the `client-only` component to ensure that the code is only executed on the client side or set your map route to `ssr: false`.
+:::
 
-```vue{19-21}
+```vue{6,18,21-23}
 <template>
   <LMap
+    style="height: 350px"
     :zoom="6"
-    :max-zoom="18"
     :center="[47.21322, -1.559482]"
+    :use-global-leaflet="true"
   >
     <LTileLayer
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -21,7 +25,8 @@ The L variable is auto-imported by the module, so you can access it directly in 
   </LMap>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import L from 'leaflet'
 import { onMounted } from 'vue'
 
 onMounted(() => {

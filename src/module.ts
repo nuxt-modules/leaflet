@@ -35,7 +35,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-leaflet',
     configKey: 'leaflet',
     compatibility: {
-      nuxt: '^3.0.0'
+      nuxt: '>=3.0.0'
     }
   },
   // Default configuration options of the Nuxt module
