@@ -6,6 +6,7 @@
       :zoom="6"
       :max-zoom="18"
       :center="[47.21322, -1.559482]"
+      :use-global-leaflet="true"
       @ready="onMapReady"
     >
       <LTileLayer
@@ -19,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+import L from 'leaflet';
 import { ref } from 'vue';
 
 const map = ref(null)

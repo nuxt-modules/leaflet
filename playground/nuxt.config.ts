@@ -10,6 +10,11 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/'
   },
+  routeRules: {
+    '/map/markercluster': {
+      ssr: false
+    }
+  },
   leaflet: {
     markerCluster: true
   }

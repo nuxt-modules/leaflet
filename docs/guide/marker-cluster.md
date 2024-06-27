@@ -5,6 +5,12 @@ A dedicated composable is available to help you use this plugin.
 
 Options for the markers are the same as the ones available in the [Leaflet documentation](https://leafletjs.com/reference.html#marker).
 
+::: warning
+This is only possible in a client-side environment. You should either :
+- Use the [ClientOnly](https://nuxt.com/docs/api/components/client-only) component to ensure that the code is executed on the client side.
+- Set your [rendering strategy](https://nuxt.com/docs/guide/concepts/rendering#client-side-rendering) to `ssr: false` for the appropriate route.
+:::
+
 ## Installation
 
 - First install markercluster
@@ -35,6 +41,7 @@ export default defineNuxtConfig({
       :zoom="6"
       :max-zoom="18"
       :center="[47.21322, -1.559482]"
+      :use-global-leaflet="true"
       @ready="onMapReady"
     >
       <LTileLayer
@@ -48,6 +55,7 @@ export default defineNuxtConfig({
 </template>
 
 <script setup lang="ts">
+import L from 'leaflet'
 import { ref } from 'vue';
 
 const map = ref(null)
