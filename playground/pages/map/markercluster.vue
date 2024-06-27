@@ -30,6 +30,10 @@ const locations = [
   { name: 'Nantes', lat: 47.218371, lng: -1.553621, options: {
     // Standard Leaflet Marker options
     draggable: true,
+    icon: L.icon({
+      iconUrl: '/nuxt-leaflet-logo.png',
+      iconSize: [30, 30],
+    })
   } },
   {
     // name is optional (no tooltip will be displayed if not provided)

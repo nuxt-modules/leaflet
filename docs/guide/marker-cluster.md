@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 
 - Use the `useMarkerCluster` composable in your component
 
-```vue{26-55,59-62}
+```vue{28-61,65-68}
 <template>
   <div style="height:100vh; width:100vw">
     <h1>Marker Cluster</h1>
@@ -65,6 +65,10 @@ const locations = [
   { name: 'Nantes', lat: 47.218371, lng: -1.553621, options: {
     // Standard Leaflet Marker options
     draggable: true,
+    icon: L.icon({
+      iconUrl: '/my-icon.png',
+      iconSize: [30, 30],
+    })
   } },
   {
     // name is optional (no tooltip will be displayed if not provided)
@@ -100,3 +104,7 @@ const onMapReady = () => {
 }
 </script>
 ```
+
+::: tip
+The `options` property of each location is optional and can be used to pass the standard [Leaflet Marker options](https://leafletjs.com/reference.html#marker).
+:::
