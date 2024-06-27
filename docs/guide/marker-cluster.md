@@ -58,7 +58,7 @@ export default defineNuxtConfig({
 import L from 'leaflet'
 import { ref } from 'vue';
 
-const map = ref(null)
+const map = ref(null) as any;
 
 // Create locations data (20 locations around Nantes)
 const locations = [
@@ -94,7 +94,7 @@ const locations = [
 // When the map is ready
 const onMapReady = () => {
   useMarkerCluster({
-    mapInstance: map.value,
+    leafletObject: map.value.leafletObject,
     markers: locations
   });
 }

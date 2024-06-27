@@ -1,4 +1,4 @@
-import type { MarkerOptions } from 'leaflet';
+import type { MarkerOptions, Map } from 'leaflet';
 
 interface MarkerProps {
   name?: string;
@@ -8,7 +8,7 @@ interface MarkerProps {
 }
 
 interface Props {
-  mapInstance: any;
+  leafletObject: Map;
   markers: MarkerProps[];
 }
 
@@ -37,5 +37,5 @@ export const useMarkerCluster = async (props: Props) => {
   });
 
   // Add the marker cluster to the map
-  props.mapInstance.leafletObject.addLayer(markerCluster);
+  props.leafletObject.addLayer(markerCluster);
 }
