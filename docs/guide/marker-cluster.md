@@ -7,7 +7,8 @@ Options for the markers are the same as the ones available in the [Leaflet docum
 
 ::: warning
 This is only possible in a client-side environment. You should either :
-- Use the [ClientOnly](https://nuxt.com/docs/api/components/client-only) component to ensure that the code is executed on the client side.
+- Use a [Client-Only Page](https://nuxt.com/docs/guide/directory-structure/pages#client-only-pages).
+- Wrap your component inside the [ClientOnly](https://nuxt.com/docs/api/components/client-only) component.
 - Set your [rendering strategy](https://nuxt.com/docs/guide/concepts/rendering#client-side-rendering) to `ssr: false` for the appropriate route.
 :::
 
@@ -32,7 +33,11 @@ export default defineNuxtConfig({
 
 - Use the `useMarkerCluster` composable in your component
 
-```vue{28-61,65-68}
+:::warning
+It is very important to keep the manual import of Leaflet and the `:use-global-leaflet="true"` as the leaflet.markercluster requires Leaflet to be loaded globally.
+:::
+
+```vue{9,23,28-61,65-68}
 <template>
   <div style="height:100vh; width:100vw">
     <h1>Marker Cluster</h1>

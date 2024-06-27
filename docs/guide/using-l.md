@@ -6,7 +6,8 @@ You can still import the `L` global variable from the `leaflet` package and use 
 
 ::: warning
 This is only possible in a client-side environment. You should either :
-- Use the [ClientOnly](https://nuxt.com/docs/api/components/client-only) component to ensure that the code is executed on the client side.
+- Use a [Client-Only Page](https://nuxt.com/docs/guide/directory-structure/pages#client-only-pages).
+- Wrap your component inside the [ClientOnly](https://nuxt.com/docs/api/components/client-only) component.
 - Set your [rendering strategy](https://nuxt.com/docs/guide/concepts/rendering#client-side-rendering) to `ssr: false` for the appropriate route.
 :::
 
