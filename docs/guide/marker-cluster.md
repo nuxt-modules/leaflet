@@ -34,7 +34,7 @@ export default defineNuxtConfig({
 - Use the `useMarkerCluster` composable in your component
 
 :::warning
-It is very important to keep the manual import of Leaflet and the `:use-global-leaflet="true"` as the leaflet.markercluster requires Leaflet to be loaded globally.
+It is very important to keep the manual import of Leaflet and the `:use-global-leaflet="true"` as leaflet.markercluster requires Leaflet to be loaded globally.
 :::
 
 ```vue{9,23,28-61,65-68}
@@ -109,7 +109,3 @@ const onMapReady = () => {
 }
 </script>
 ```
-
-::: tip
-The `options` property of each location is optional and can be used to pass the standard [Leaflet Marker options](https://leafletjs.com/reference.html#marker).
-:::
