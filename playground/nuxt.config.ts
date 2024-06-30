@@ -1,7 +1,16 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
-  devtools: { enabled: true },
+  modules: ['../src/module', '@nuxt/ui'],
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
   app: {
     baseURL: '/'
+  },
+  leaflet: {
+    markerCluster: true
   }
 })

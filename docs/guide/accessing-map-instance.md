@@ -1,4 +1,4 @@
-# Accessing a Map Instance
+# Accessing a map instance
 
 The guide explains how to access a Leaflet map instance from a Vue component, as featured in the [original vue-leaflet library](https://github.com/vue-leaflet/vue-leaflet/blob/master/docs/faq/index.md#how-can-i-access-the-leaflet-map-object).
 
@@ -12,7 +12,7 @@ The guide explains how to access a Leaflet map instance from a Vue component, as
       :zoom="6"
       :max-zoom="18"
       :center="[47.21322, -1.559482]"
-      @ready="mapInitialized"
+      @ready="onMapReady"
     >
       <LTileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -31,7 +31,7 @@ const map = ref(null)
 </script>
 ```
 
-- Create a `mapInitialized` method that will be called when the map is ready.
+- Create a `onMapReady` method that will be called when the map is ready.
 
 You can now access the Leaflet map instance using `map.value.leafletObject`.
 
@@ -43,7 +43,7 @@ You can now access the Leaflet map instance using `map.value.leafletObject`.
       :zoom="6"
       :max-zoom="18"
       :center="[47.21322, -1.559482]"
-      @ready="mapInitialized"
+      @ready="onMapReady"
     >
       <LTileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -61,7 +61,7 @@ import { ref } from 'vue'
 const map = ref(null)
 
 // When the map is ready
-const mapInitialized = () => {
+const onMapReady = () => {
     // Access the Leaflet map instance
     console.log(map.value.leafletObject)
 }
