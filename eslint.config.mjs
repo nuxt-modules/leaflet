@@ -7,9 +7,12 @@ export default createConfigForNuxt({
     tooling: true,
   },
   dirs: {
-    src: ['src', 'docs'],
+    src: ['src'],
   },
 })
+  .append({
+    ignores: ['playground', 'docs', 'test'],
+  })
   .override('nuxt/typescript/rules', {
     rules: {
       // TODO: Discuss if we want to enable this
