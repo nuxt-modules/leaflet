@@ -27,7 +27,7 @@ export const components = [
   'LRectangle',
   'LTileLayer',
   'LTooltip',
-  'LWmsTileLayer'
+  'LWmsTileLayer',
 ]
 
 export default defineNuxtModule<ModuleOptions>({
@@ -35,12 +35,12 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-leaflet',
     configKey: 'leaflet',
     compatibility: {
-      nuxt: '>=3.0.0'
-    }
+      nuxt: '>=3.0.0',
+    },
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  async setup (options, nuxt) {
+  async setup(options, nuxt) {
     // Create a resolver for the module
     const resolver = createResolver(import.meta.url)
 
@@ -54,7 +54,7 @@ export default defineNuxtModule<ModuleOptions>({
         export: component,
         filePath: '@vue-leaflet/vue-leaflet',
         chunkName: `nuxt-leaflet/${component}`,
-        mode: 'all'
+        mode: 'all',
       })
     }
 
@@ -68,8 +68,8 @@ export default defineNuxtModule<ModuleOptions>({
       addImports({
         name: 'useMarkerCluster',
         as: 'useMarkerCluster',
-        from: resolver.resolve('runtime/composables/useMarkerCluster')
+        from: resolver.resolve('runtime/composables/useMarkerCluster'),
       })
     }
-  }
+  },
 })
