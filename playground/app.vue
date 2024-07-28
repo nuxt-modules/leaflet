@@ -23,6 +23,10 @@ const links = [{
   icon: 'i-heroicons-rectangle-group-16-solid',
   to: '/map/markercluster'
 }, {
+  label: 'Heat',
+  icon: 'i-heroicons-fire-20-solid',
+  to: '/map/heat'
+}, {
   label: 'Draw (Deprecated)',
   icon: 'i-heroicons-pencil-16-solid',
   to: '/map/draw'

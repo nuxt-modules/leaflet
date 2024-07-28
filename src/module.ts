@@ -2,7 +2,8 @@ import { defineNuxtModule, addComponent, createResolver, addImports } from '@nux
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  markerCluster?: boolean
+  markerCluster?: boolean,
+  heat?: boolean
 }
 
 // Components to export
@@ -69,6 +70,16 @@ export default defineNuxtModule<ModuleOptions>({
         name: 'useMarkerCluster',
         as: 'useMarkerCluster',
         from: resolver.resolve('runtime/composables/useMarkerCluster')
+      })
+    }
+
+    // If leaflet.heat is enabled
+    if (options.heat) {
+      // Auto-import the runtime composables
+      addImports({
+        name: 'useHeat',
+        as: 'useHeat',
+        from: resolver.resolve('runtime/composables/useHeat')
       })
     }
   }
