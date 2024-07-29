@@ -49,7 +49,9 @@ const heatPoints = [{
 const onMapReady = async () => {
   const heat = await useHeat({
     leafletObject: map.value.leafletObject,
-    heatPoints: heatPoints
+    heatPoints: heatPoints,
+    // (optional) radius : default 50
+    radius: 50,
   });
 
   // (optional) Make the heat layer drawable

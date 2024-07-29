@@ -11,6 +11,7 @@ interface HeatPoint {
 interface Props {
   leafletObject: Map;
   heatPoints: HeatPoint[];
+  radius?: number;
 }
 
 export const useHeat = async (props: Props) => {
@@ -20,7 +21,7 @@ export const useHeat = async (props: Props) => {
 
   const heat = L.heatLayer(
     props.heatPoints.map((point) => [point.lat, point.lng, point.intensity]),
-    {radius: 50}
+    {radius: props.radius || 50}
   );
 
   // Add the heat layer to the map

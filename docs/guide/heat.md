@@ -35,7 +35,7 @@ export default defineNuxtConfig({
 It is very important to keep the manual import of Leaflet and the `:use-global-leaflet="true"` as leaflet.markercluster requires Leaflet to be loaded globally.
 :::
 
-```vue{9,23,29-46,50-53}
+```vue{9,23,29-46,50-55}
 <template>
   <div style="height:100vh; width:100vw">
     <h1>Heat</h1>
@@ -87,7 +87,9 @@ const heatPoints = [{
 const onMapReady = async () => {
   const heat = await useHeat({
     leafletObject: map.value.leafletObject,
-    heatPoints: heatPoints
+    heatPoints: heatPoints,
+    // (optional) radius : default 50
+    radius: 50,
   });
 
   // (optional) Make the heat layer drawable
