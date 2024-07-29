@@ -31,7 +31,7 @@ export default defineNuxtConfig({
 })
 ```
 
-- Use the `useMarkerCluster` composable in your component
+- Use the `useLMarkerCluster` composable in your component
 
 :::warning
 It is very important to keep the manual import of Leaflet and the `:use-global-leaflet="true"` as leaflet.markercluster requires Leaflet to be loaded globally.
@@ -102,7 +102,7 @@ const locations = [
 
 // When the map is ready
 const onMapReady = () => {
-  useMarkerCluster({
+  useLMarkerCluster({
     leafletObject: map.value.leafletObject,
     markers: locations
   });

@@ -29,7 +29,7 @@ export default defineNuxtConfig({
 })
 ```
 
-- Use the `useHeat` composable in your component
+- Use the `useLHeat` composable in your component
 
 :::warning
 It is very important to keep the manual import of Leaflet and the `:use-global-leaflet="true"` as leaflet.markercluster requires Leaflet to be loaded globally.
@@ -85,7 +85,7 @@ const heatPoints = [{
 
 // When the map is ready
 const onMapReady = async () => {
-  const heat = await useHeat({
+  const heat = await useLHeat({
     leafletObject: map.value.leafletObject,
     heatPoints: heatPoints,
     // (optional) radius : default 50

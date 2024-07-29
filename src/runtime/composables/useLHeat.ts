@@ -14,7 +14,7 @@ interface Props {
   radius?: number;
 }
 
-export const useHeat = async (props: Props) => {
+export const useLHeat = async (props: Props) => {
   // Lazy-load leaflet.heat
   // Importing it at the top level will cause errors because it could be loaded before the Leaflet library
   await import('leaflet.heat');
