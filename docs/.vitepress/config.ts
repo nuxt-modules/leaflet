@@ -27,7 +27,8 @@ export default defineConfig({
         items: [
           { text: 'Using L', link: '/guide/using-l' },
           { text: 'Accessing a map instance', link: '/guide/accessing-map-instance' },
-          { text: 'Leaflet.markercluster', link: '/guide/marker-cluster' }
+          { text: 'Leaflet.markercluster', link: '/guide/marker-cluster' },
+          { text: 'Leaflet.heat', link: '/guide/heat' }
         ]
       },
       {

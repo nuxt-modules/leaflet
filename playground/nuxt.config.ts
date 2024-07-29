@@ -14,7 +14,8 @@ export default defineNuxtConfig({
   },
 
   leaflet: {
-    markerCluster: true
+    markerCluster: true,
+    heat: true
   },
 
   compatibilityDate: '2024-07-26'

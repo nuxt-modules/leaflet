@@ -62,7 +62,7 @@ const locations = [
 
 // When the map is ready
 const onMapReady = () => {
-  useMarkerCluster({
+  useLMarkerCluster({
     leafletObject: map.value.leafletObject,
     markers: locations
   });

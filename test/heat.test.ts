@@ -4,10 +4,10 @@ import { setup, $fetch } from '@nuxt/test-utils'
 
 describe('nuxt leaflet', async () => {
   await setup({
-    rootDir: fileURLToPath(new URL('./fixtures/basic', import.meta.url)),
+    rootDir: fileURLToPath(new URL('./fixtures/heat', import.meta.url)),
   })
 
-  it('renders a basic map', async () => {
+  it('renders a basic map with the leaflet.heat plugin', async () => {
     // Get response to a server-rendered page with `$fetch`.
     const html = await $fetch('/')
     // Verify there is no error

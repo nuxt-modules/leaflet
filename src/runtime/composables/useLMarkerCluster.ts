@@ -12,7 +12,7 @@ interface Props {
   markers: MarkerProps[];
 }
 
-export const useMarkerCluster = async (props: Props) => {
+export const useLMarkerCluster = async (props: Props) => {
   // Get Leaflet from the window object
   const L = window.L;
 

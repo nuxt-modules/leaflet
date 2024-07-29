@@ -1,10 +1,5 @@
 # Using Leaflet.markercluster
 
-::: warning
-This is still not proven as stable because of weird building behavior.
-Feel free to report any issue in the Github repository, this could help a lot improving this feature.
-:::
-
 The guide explains how to use the [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) plugin.
 A dedicated composable is available to help you use this plugin.
 
@@ -36,7 +31,7 @@ export default defineNuxtConfig({
 })
 ```
 
-- Use the `useMarkerCluster` composable in your component
+- Use the `useLMarkerCluster` composable in your component
 
 :::warning
 It is very important to keep the manual import of Leaflet and the `:use-global-leaflet="true"` as leaflet.markercluster requires Leaflet to be loaded globally.
@@ -107,7 +102,7 @@ const locations = [
 
 // When the map is ready
 const onMapReady = () => {
-  useMarkerCluster({
+  useLMarkerCluster({
     leafletObject: map.value.leafletObject,
     markers: locations
   });
