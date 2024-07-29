@@ -1,3 +1,5 @@
+// L can be loaded here as the composable should be loaded client-side only
+import L from 'leaflet';
 import type { Map } from 'leaflet';
 
 interface HeatPoint {
@@ -12,9 +14,6 @@ interface Props {
 }
 
 export const useHeat = async (props: Props) => {
-  // Get Leaflet from the window object
-  const L = window.L;
-
   // Lazy-load leaflet.heat
   // Importing it at the top level will cause errors because it could be loaded before the Leaflet library
   await import('leaflet.heat');

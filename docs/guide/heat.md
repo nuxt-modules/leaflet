@@ -1,10 +1,5 @@
 # Using Leaflet.heat
 
-::: warning
-This is still not proven as stable because of weird building behavior.
-Feel free to report any issue in the Github repository, this could help a lot improving this feature.
-:::
-
 The guide explains how to use the [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) plugin.
 A dedicated composable is available to help you use this plugin.
 
