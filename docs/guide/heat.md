@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 - Use the `useLHeat` composable in your component
 
 :::warning
-It is very important to keep the manual import of Leaflet and the `:use-global-leaflet="true"` as leaflet.markercluster requires Leaflet to be loaded globally.
+It is very important to keep the manual import of Leaflet and the `:use-global-leaflet="true"` as leaflet.heat requires Leaflet to be loaded globally.
 :::
 
 ```vue{9,23,29-46,50-55}
