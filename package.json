@@ -47,7 +47,7 @@
     "@nuxt/module-builder": "^0.8.1",
     "@nuxt/schema": "^3.12.4",
     "@nuxt/test-utils": "^3.14.0",
-    "@nuxt/ui": "^2.18.2",
+    "@nuxt/ui": "^2.18.3",
     "@types/leaflet.heat": "^0.2.4",
     "@types/node": "^20.14.13",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
