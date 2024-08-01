@@ -51,7 +51,7 @@
     "@types/leaflet.heat": "^0.2.4",
     "@types/node": "^20.14.13",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "caniuse-lite": "^1.0.30001645",
+    "caniuse-lite": "^1.0.30001646",
     "changelogen": "^0.5.5",
     "eslint": "^8.57.0",
     "leaflet.heat": "^0.2.0",
