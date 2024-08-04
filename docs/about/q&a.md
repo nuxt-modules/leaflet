@@ -26,9 +26,7 @@ MapLibre originated as an open-source fork of mapbox-gl-js, before their switch 
 The library's initial versions (1.x) were intended to be a drop-in replacement for the Mapbox’s OSS version (1.x) with additional functionality, but have evolved a lot since then.
 :::
 
-If you want to use MapLibre with Nuxt, you can use the [Vue MapLibre](https://indoorequal.github.io/vue-maplibre-gl/) module which has some documentation for Nuxt.
-
-We are also working on a dedicated Nuxt module for MapLibre.
+If you want to use MapLibre with Nuxt, we recommend using the [Nuxt MapLibre](https://gugustinette.github.io/nuxt-maplibre) module.
 
 ## Will Leaflet.draw be supported in the future ?
 
