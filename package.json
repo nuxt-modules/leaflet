@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/leaflet",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Nuxt module for Leaflet",
   "homepage": "https://leaflet.nuxtjs.org",
   "repository": "https://github.com/nuxt-modules/leaflet",
@@ -42,22 +42,22 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxt/eslint-config": "^0.4.0",
+    "@nuxt/eslint-config": "^0.5.0",
     "@nuxt/kit": "^3.12.4",
     "@nuxt/module-builder": "^0.8.1",
     "@nuxt/schema": "^3.12.4",
     "@nuxt/test-utils": "^3.14.0",
-    "@nuxt/ui": "^2.18.2",
+    "@nuxt/ui": "^2.18.3",
     "@types/leaflet.heat": "^0.2.4",
-    "@types/node": "^20.14.13",
-    "@typescript-eslint/eslint-plugin": "^7.17.0",
-    "caniuse-lite": "^1.0.30001643",
+    "@types/node": "^20.14.14",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "caniuse-lite": "^1.0.30001649",
     "changelogen": "^0.5.5",
     "eslint": "^9.8.0",
     "leaflet.heat": "^0.2.0",
     "leaflet.markercluster": "^1.5.3",
     "nuxt": "^3.12.4",
     "vitepress": "^1.3.1",
-    "vitest": "^2.0.4"
+    "vitest": "^2.0.5"
   }
 }
