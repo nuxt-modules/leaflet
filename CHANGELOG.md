@@ -1,5 +1,38 @@
 # Changelog
 
+## v1.2.0
+
+This release add support fort the [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) plugin, through an auto-imported composable `useLHeat`.
+
+More info : https://leaflet.nuxtjs.org/guide/heat.html
+
+### ✨ Changes
+
+- `useLHeat` composable was added to support [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat)
+  - Related tests and documentation were added
+- `useMarkerCluster` was renamed to `useLMarkerCluster` to fit the [standards](https://nuxt.com/docs/guide/going-further/modules#always-prefix-exposed-interfaces)
+
+### ❤️  Contributors
+
+- Gugustinette  <mercier.augustin@outlook.fr>
+
+## v1.1.0
+
+This release add support fort the [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) plugin, through an auto-imported composable `useMarkerCluster`.
+
+More info : https://leaflet.nuxtjs.org/guide/marker-cluster.html
+
+### ✨ Changes
+
+- **Add support for Leaflet.markercluster** : [issue](https://github.com/nuxt-modules/leaflet/issues/15)
+
+### ❤️  Contributors
+
+- Gugustinette  <mercier.augustin@outlook.fr>
+- Daniel Roe <daniel@roe.dev>
+- @antoineLZCH
+- @shinGangan
+
 ## v1.0.14
 
 This release is a migration from the old `nuxt3-leaflet` module to the new `@nuxtjs/leaflet` module.
