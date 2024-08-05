@@ -20,47 +20,48 @@
 </template>
 
 <script setup lang="ts">
-import L from 'leaflet';
-import { ref } from 'vue';
+// eslint-disable-next-line
+import L from 'leaflet'
+import { ref } from 'vue'
 
-const isDrawing = ref(false);
-const map = ref(null) as any;
+const isDrawing = ref(false)
+const map = ref(null) as any
 
 // Create heat data
 const heatPoints = [{
   lat: 47.21322,
   lng: -1.559482,
-  intensity: 100.0
+  intensity: 100.0,
 }, {
   lat: 47.21322,
   lng: -1.558482,
-  intensity: 50.0
+  intensity: 50.0,
 }, {
   lat: 47.21322,
   lng: -1.557482,
-  intensity: 25.0
+  intensity: 25.0,
 }, {
   lat: 47.21322,
   lng: -1.556482,
-  intensity: 10.0
-}];
+  intensity: 10.0,
+}]
 
 // When the map is ready
 const onMapReady = async () => {
   const heat = await useLHeat({
     leafletObject: map.value.leafletObject,
-    heatPoints: heatPoints
-  });
+    heatPoints: heatPoints,
+  })
 
   // (optional) Make the heat layer drawable
   map.value.leafletObject.on({
-    movestart: function () { isDrawing.value = false; },
-    moveend:   function () { isDrawing.value = true; },
+    movestart: function () { isDrawing.value = false },
+    moveend: function () { isDrawing.value = true },
     mousemove: function (e: any) {
       if (isDrawing.value) {
-        heat.addLatLng(e.latlng);
+        heat.addLatLng(e.latlng)
       }
-    }
+    },
   })
 }
 </script>
