@@ -20,10 +20,10 @@
 </template>
 
 <script setup lang="ts">
-import L from 'leaflet';
-import { ref } from 'vue';
+import L from 'leaflet'
+import { ref } from 'vue'
 
-const map = ref(null) as any;
+const map = ref(null) as any
 
 // Create locations data (20 locations around Nantes)
 const locations = [
@@ -33,12 +33,12 @@ const locations = [
     icon: L.icon({
       iconUrl: '/nuxt-leaflet-logo.png',
       iconSize: [30, 30],
-    })
+    }),
   } },
   {
     // name is optional (no tooltip will be displayed if not provided)
     /* name: 'Saint-Nazaire', */
-    lat: 47.273018, lng: -2.213733 
+    lat: 47.273018, lng: -2.213733,
   },
   { name: 'La Baule', lat: 47.286835, lng: -2.393108 },
   { name: 'Pornic', lat: 47.112, lng: -2.102 },
@@ -57,14 +57,14 @@ const locations = [
   { name: 'Sainte-Luce-sur-Loire', lat: 47.233, lng: -1.483 },
   { name: 'Bouguenais', lat: 47.183, lng: -1.583 },
   { name: 'Saint-Sébastien-sur-Loire', lat: 47.183, lng: -1.483 },
-  { name: 'Basse-Goulaine', lat: 47.2, lng: -1.483 }
-];
+  { name: 'Basse-Goulaine', lat: 47.2, lng: -1.483 },
+]
 
 // When the map is ready
 const onMapReady = () => {
   useLMarkerCluster({
     leafletObject: map.value.leafletObject,
-    markers: locations
-  });
+    markers: locations,
+  })
 }
 </script>
