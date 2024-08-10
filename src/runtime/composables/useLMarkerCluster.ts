@@ -40,7 +40,9 @@ export const useLMarkerCluster = async (props: Props) => {
 
     // If a popup is provided, bind it to the marker
     if (location.popup) {
-      marker.bindPopup(L.popup().setContent(location.popup))
+      const popup = L.DomUtil.create('div', 'popup')
+      popup.innerHTML = location.popup
+      marker.bindPopup(popup)
     }
 
     // Add the marker to the cluster

@@ -79,7 +79,11 @@ const onMapReady = async () => {
     markers: locations
   });
   // Access the markers
-  markers[3].bindPopup('Hello Pornic');
+  markers[3].bindPopup('<h1>Hello Pornic</h1><button type="button" style="background: black; color: white;">Click me</button>');
+  const popupDiv = markers[2].getPopup()?.getContent() as HTMLElement;
+  popupDiv.addEventListener('click', () => {
+    console.log("click")
+  });
   // Access the markerCluster
   markerCluster.on('clusterclick', (event: any) => {
     console.log('Cluster clicked', event);
