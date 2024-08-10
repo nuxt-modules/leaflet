@@ -27,20 +27,32 @@ const map = ref(null) as any;
 
 // Create locations data (20 locations around Nantes)
 const locations = [
-  { name: 'Nantes', lat: 47.218371, lng: -1.553621, options: {
+  {
+    name: 'Nantes',
+    lat: 47.218371,
+    lng: -1.553621,
     // Standard Leaflet Marker options
-    draggable: true,
-    icon: L.icon({
-      iconUrl: '/nuxt-leaflet-logo.png',
-      iconSize: [30, 30],
-    })
-  } },
+    options: {
+      draggable: true,
+      icon: L.icon({
+        iconUrl: '/nuxt-leaflet-logo.png',
+        iconSize: [30, 30],
+      })
+    } 
+  },
   {
     // name is optional (no tooltip will be displayed if not provided)
     /* name: 'Saint-Nazaire', */
-    lat: 47.273018, lng: -2.213733 
+    lat: 47.273018, lng: -2.213733
   },
-  { name: 'La Baule', lat: 47.286835, lng: -2.393108 },
+  {
+    name: 'La Baule',
+    lat: 47.286835,
+    lng: -2.393108,
+    // A popup can be displayed when clicking on the marker
+    // It should be a string formatted as HTML
+    popup: 'La Baule'
+  },
   { name: 'Pornic', lat: 47.112, lng: -2.102 },
   { name: 'Guérande', lat: 47.328, lng: -2.429 },
   { name: 'Clisson', lat: 47.087, lng: -1.276 },
@@ -61,10 +73,16 @@ const locations = [
 ];
 
 // When the map is ready
-const onMapReady = () => {
-  useLMarkerCluster({
+const onMapReady = async () => {
+  const { markers, markerCluster } = await useLMarkerCluster({
     leafletObject: map.value.leafletObject,
     markers: locations
+  });
+  // Access the markers
+  markers[3].bindPopup('Hello Pornic');
+  // Access the markerCluster
+  markerCluster.on('clusterclick', (event: any) => {
+    console.log('Cluster clicked', event);
   });
 }
 </script>

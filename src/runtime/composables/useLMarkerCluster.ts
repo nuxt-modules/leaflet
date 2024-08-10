@@ -1,10 +1,14 @@
-import type { MarkerOptions, Map } from 'leaflet'
+import type { MarkerOptions, Map, Marker } from 'leaflet'
 
 interface MarkerProps {
   name?: string
   lat: number
   lng: number
   options?: MarkerOptions
+  /**
+   * Should be a string formatted as HTML
+   */
+  popup?: string
 }
 
 interface Props {
@@ -23,6 +27,9 @@ export const useLMarkerCluster = async (props: Props) => {
   // Initialize marker cluster
   const markerCluster = new MarkerClusterGroup()
 
+  // Create an array to store the markers
+  const markers = [] as Marker[]
+
   // For each marker in props
   props.markers.forEach((location: any) => {
     // Create a Leaflet marker
@@ -31,10 +38,24 @@ export const useLMarkerCluster = async (props: Props) => {
       ...location.options,
     })
 
+    // If a popup is provided, bind it to the marker
+    if (location.popup) {
+      marker.bindPopup(L.popup().setContent(location.popup))
+    }
+
     // Add the marker to the cluster
     markerCluster.addLayer(marker)
+
+    // Add the marker to the markers array
+    markers.push(marker)
   })
 
   // Add the marker cluster to the map
   props.leafletObject.addLayer(markerCluster)
+
+  // Return the markerCluster and markers
+  return {
+    markerCluster,
+    markers,
+  }
 }
