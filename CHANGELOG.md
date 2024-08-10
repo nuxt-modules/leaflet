@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.2.1
+
+This release improves the `useLMarkerCluster` to help using legacy methods from Leaflet.
+
+More info : https://leaflet.nuxtjs.org/guide/marker-cluster.html
+
+### ✨ Changes
+
+- `useLMarkerCluster` now returns 2 objects
+  - `markers` which is the array of [Marker](https://leafletjs.com/reference.html#marker) created during the creation of the cluster
+  - `markerCluster` which is the MarkerCluster created
+- Markers passed to `useLMarkerCluster` now takes a `popup` option, considered an HTML string, that automatically binds a [Popup](https://leafletjs.com/reference.html#popup) to the corresponding marker
+
+### ❤️  Contributors
+
+- Gugustinette  <mercier.augustin@outlook.fr>
+- @tratteo
+
 ## v1.2.0
 
 This release add support fort the [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) plugin, through an auto-imported composable `useLHeat`.
