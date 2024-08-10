@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.2.2
+
+This release replaces `L.popup()` with `L.DomUtil.create()` when creating the popup inside `useLMarkerCluster`
+
+### ❤️  Contributors
+
+- Gugustinette  <mercier.augustin@outlook.fr>
+- @tratteo
+
 ## v1.2.1
 
 This release improves the `useLMarkerCluster` to help using legacy methods from Leaflet.
