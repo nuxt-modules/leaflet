@@ -50,7 +50,7 @@
     "@nuxt/test-utils": "^3.14.3",
     "@nuxt/ui": "^2.18.7",
     "@types/leaflet.heat": "^0.2.4",
-    "@types/node": "^20.16.11",
+    "@types/node": "^22.8.7",
     "@typescript-eslint/eslint-plugin": "^8.8.1",
     "caniuse-lite": "^1.0.30001668",
     "changelogen": "^0.5.7",
