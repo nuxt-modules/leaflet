@@ -51,7 +51,7 @@
     "@nuxt/ui": "^2.19.2",
     "@types/leaflet.heat": "^0.2.4",
     "@types/node": "^22.10.1",
-    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
     "caniuse-lite": "^1.0.30001685",
     "changelogen": "^0.5.7",
     "eslint": "^9.16.0",
@@ -59,6 +59,6 @@
     "leaflet.markercluster": "^1.5.3",
     "nuxt": "^3.14.1592",
     "vitepress": "^1.5.0",
-    "vitest": "^2.1.6"
+    "vitest": "^2.1.8"
   }
 }
