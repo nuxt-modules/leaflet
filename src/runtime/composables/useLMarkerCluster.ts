@@ -11,9 +11,18 @@ interface MarkerProps {
   popup?: string
 }
 
+interface MarkerClusterGroupOptions {
+  showCoverageOnHover?: boolean
+  zoomToBoundsOnClick?: boolean
+  spiderfyOnMaxZoom?: boolean
+  removeOutsideVisibleBounds?: boolean
+  spiderLegPolylineOptions?: any
+}
+
 interface Props {
   leafletObject: Map
   markers: MarkerProps[]
+  options?: MarkerClusterGroupOptions
 }
 
 export const useLMarkerCluster = async (props: Props) => {
@@ -25,7 +34,7 @@ export const useLMarkerCluster = async (props: Props) => {
   const { MarkerClusterGroup } = await import('leaflet.markercluster')
 
   // Initialize marker cluster
-  const markerCluster = new MarkerClusterGroup()
+  const markerCluster = new MarkerClusterGroup(props.options)
 
   // Create an array to store the markers
   const markers = [] as Marker[]

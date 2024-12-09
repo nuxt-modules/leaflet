@@ -76,7 +76,14 @@ const locations = [
 const onMapReady = async () => {
   const { markers, markerCluster } = await useLMarkerCluster({
     leafletObject: map.value.leafletObject,
-    markers: locations
+    markers: locations,
+    options: {
+      // showCoverageOnHover: true
+      // zoomToBoundsOnClick: true
+      // spiderfyOnMaxZoom: true
+      // removeOutsideVisibleBounds: true
+      // spiderLegPolylineOptions: { weight: 1.5, color: '#222', opacity: 0.5 }
+    }
   });
   // Access the markers
   markers[3].bindPopup('<h1>Hello Pornic</h1><button type="button" style="background: black; color: white;">Click me</button>');
