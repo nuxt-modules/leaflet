@@ -50,6 +50,7 @@
     "@nuxt/test-utils": "^3.15.1",
     "@nuxt/ui": "^2.20.0",
     "@types/leaflet.heat": "^0.2.4",
+    "@types/leaflet.markercluster": "^1.5.5",
     "@types/node": "^22.10.1",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "caniuse-lite": "^1.0.30001687",
