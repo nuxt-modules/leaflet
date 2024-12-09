@@ -99,15 +99,33 @@ const onMapReady = () => {
 
 ## Options
 
+Here are the options available for the `useLMarkerCluster` composable.
+
+| Option        | Type                                                                                                                  | Description                                                                          |
+| ------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| leafletObject | [Leaflet Map](https://github.com/Leaflet/Leaflet/blob/main/src/map/Map.js)                                            | **(required)** The Leaflet Map object to attach the marker cluster group to.         |
+| markers       | Marker                                                                                                                | **(required)** Array of locations to display on the map (documented in next section) |
+| options       | [MarkerClusterGroupOptions](https://github.com/Leaflet/Leaflet.markercluster/tree/master?tab=readme-ov-file#defaults) | Legacy options to pass to the marker cluster group.                                  |
+
 Here are the options available for each marker in the `markers` prop.
 
-| Event name | Type   | Description                                                                                                        |
-| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------ |
-| name       | string | **(optional)** Name of the location, will be displayed in a tooltip. If not provided, no tooltip will be displayed |
-| lat        | number | Latitude of the location                                                                                           |
-| lng        | number | Longitude of the location                                                                                          |
-| options    | object | **(optional)** Standard [Leaflet Marker options](https://leafletjs.com/reference.html#marker)                      |
-| popup      | string | **(optional)** If provided, it is considered as an HTML string and will be displayed as a popup on the marker      |
+| Option  | Type   | Description                                                                                                        |
+| ------- | ------ | ------------------------------------------------------------------------------------------------------------------ |
+| name    | string | **(optional)** Name of the location, will be displayed in a tooltip. If not provided, no tooltip will be displayed |
+| lat     | number | Latitude of the location                                                                                           |
+| lng     | number | Longitude of the location                                                                                          |
+| options | object | **(optional)** Standard [Leaflet Marker options](https://leafletjs.com/reference.html#marker)                      |
+| popup   | string | **(optional)** If provided, it is considered as an HTML string and will be displayed as a popup on the marker      |
+
+Here are the options available for the `options` prop.
+
+| Option                     | Type    | Description                                                                                                                    |
+| -------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| showCoverageOnHover        | boolean | When you mouse over a cluster it shows the bounds of its markers.                                                              |
+| zoomToBoundsOnClick        | boolean | When you click a cluster we zoom to its bounds.                                                                                |
+| spiderfyOnMaxZoom          | boolean | When you click a cluster at the bottom zoom level we spiderfy it so you can see all of its markers.                            |
+| removeOutsideVisibleBounds | boolean | Clusters and markers too far from the viewport are removed from the map for performance.                                       |
+| spiderLegPolylineOptions   | object  | Allows you to specify PolylineOptions to style spider legs. By default, they are { weight: 1.5, color: '#222', opacity: 0.5 }. |
 
 ## Recipes
 
