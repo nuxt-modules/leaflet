@@ -1,4 +1,4 @@
-import type { MarkerOptions, Map, Marker } from 'leaflet'
+import type { MarkerOptions, Map, Marker, MarkerClusterGroupOptions } from 'leaflet'
 
 interface MarkerProps {
   name?: string
@@ -9,14 +9,6 @@ interface MarkerProps {
    * Should be a string formatted as HTML
    */
   popup?: string
-}
-
-interface MarkerClusterGroupOptions {
-  showCoverageOnHover?: boolean
-  zoomToBoundsOnClick?: boolean
-  spiderfyOnMaxZoom?: boolean
-  removeOutsideVisibleBounds?: boolean
-  spiderLegPolylineOptions?: any
 }
 
 interface Props {
