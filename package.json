@@ -60,6 +60,6 @@
     "leaflet.markercluster": "^1.5.3",
     "nuxt": "^3.15.2",
     "vitepress": "^1.5.0",
-    "vitest": "^2.1.8"
+    "vitest": "^3.0.1"
   }
 }
