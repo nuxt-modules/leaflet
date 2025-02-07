@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxt/eslint-config": "^1.0.0",
+    "@nuxt/eslint-config": "^1.0.1",
     "@nuxt/kit": "^3.15.4",
     "@nuxt/module-builder": "^0.8.4",
     "@nuxt/schema": "^3.15.4",
@@ -53,7 +53,7 @@
     "@types/leaflet.markercluster": "^1.5.5",
     "@types/node": "^22.13.1",
     "@typescript-eslint/eslint-plugin": "^8.23.0",
-    "caniuse-lite": "^1.0.30001697",
+    "caniuse-lite": "^1.0.30001698",
     "changelogen": "^0.5.7",
     "eslint": "^9.19.0",
     "leaflet.heat": "^0.2.0",
