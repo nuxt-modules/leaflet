@@ -48,7 +48,7 @@
     "@nuxt/module-builder": "^0.8.4",
     "@nuxt/schema": "^3.14.1592",
     "@nuxt/test-utils": "^3.15.1",
-    "@nuxt/ui": "^2.20.0",
+    "@nuxt/ui": "^3.0.0-alpha.13",
     "@types/leaflet.heat": "^0.2.4",
     "@types/leaflet.markercluster": "^1.5.5",
     "@types/node": "^22.10.2",
