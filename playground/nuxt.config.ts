@@ -18,5 +18,7 @@ export default defineNuxtConfig({
     heat: true
   },
 
-  compatibilityDate: '2024-07-26'
+  compatibilityDate: '2024-07-26',
+
+  css: ['~/assets/css/main.css']
 })
