@@ -51,7 +51,7 @@
     "@nuxt/ui": "^3.0.1",
     "@types/leaflet.heat": "^0.2.4",
     "@types/leaflet.markercluster": "^1.5.5",
-    "@types/node": "^22.13.12",
+    "@types/node": "^22.13.13",
     "@typescript-eslint/eslint-plugin": "^8.27.0",
     "caniuse-lite": "^1.0.30001707",
     "changelogen": "^0.6.1",
