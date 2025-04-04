@@ -53,7 +53,7 @@
     "@types/leaflet.markercluster": "^1.5.5",
     "@types/node": "^22.14.0",
     "@typescript-eslint/eslint-plugin": "^8.29.0",
-    "caniuse-lite": "^1.0.30001709",
+    "caniuse-lite": "^1.0.30001710",
     "changelogen": "^0.6.1",
     "eslint": "^9.23.0",
     "leaflet.heat": "^0.2.0",
