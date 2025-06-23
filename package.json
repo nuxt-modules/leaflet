@@ -53,13 +53,13 @@
     "@types/leaflet.markercluster": "^1.5.5",
     "@types/node": "^22.15.32",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
-    "caniuse-lite": "^1.0.30001723",
+    "caniuse-lite": "^1.0.30001724",
     "changelogen": "^0.6.1",
     "eslint": "^9.29.0",
     "leaflet.heat": "^0.2.0",
     "leaflet.markercluster": "^1.5.3",
     "nuxt": "^3.17.5",
     "vitepress": "^1.6.3",
-    "vitest": "^3.2.3"
+    "vitest": "^3.2.4"
   }
 }
