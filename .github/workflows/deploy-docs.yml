@@ -41,10 +41,8 @@ jobs:
           cache: npm # or pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      # Remove package-lock.json because native bindings does not work correctly for some reason
-      - run: rm package-lock.json
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Setup playground
         run: npm run dev:prepare
       - name: Build with VitePress

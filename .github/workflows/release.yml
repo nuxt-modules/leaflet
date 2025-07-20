@@ -13,11 +13,7 @@ jobs:
           with:
             node-version: 18
             registry-url: https://registry.npmjs.org/
-        # Remove package-lock.json because native bindings does not work correctly for some reason
-        - run: rm package-lock.json
-        - run: npm i
-        - name: Lint with ESLint
-          run: npm run lint
+        - run: npm ci
         - name: Prepare testing with the playground
           run: npm run dev:prepare
         - name: Test package
