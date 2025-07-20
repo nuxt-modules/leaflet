@@ -34,7 +34,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@types/leaflet": "^1.9.19",
+    "@types/leaflet": "^1.9.20",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
     "leaflet": "^1.9.4"
   },
@@ -43,13 +43,13 @@
     "@nuxt/kit": "^3.17.7",
     "@nuxt/module-builder": "^1.0.1",
     "@nuxt/schema": "^3.17.7",
-    "@nuxt/test-utils": "^3.19.1",
+    "@nuxt/test-utils": "^3.19.2",
     "@nuxt/ui": "^3.2.0",
     "@types/leaflet.heat": "^0.2.4",
     "@types/leaflet.markercluster": "^1.5.5",
-    "@types/node": "^22.15.34",
-    "caniuse-lite": "^1.0.30001726",
-    "changelogen": "^0.6.1",
+    "@types/node": "^22.16.5",
+    "caniuse-lite": "^1.0.30001727",
+    "changelogen": "^0.6.2",
     "leaflet.heat": "^0.2.0",
     "leaflet.markercluster": "^1.5.3",
     "nuxt": "^3.17.7",
