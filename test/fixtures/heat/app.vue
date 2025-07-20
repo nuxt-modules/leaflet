@@ -20,7 +20,6 @@
 </template>
 
 <script setup lang="ts">
-// eslint-disable-next-line
 import L from 'leaflet'
 import { ref } from 'vue'
 

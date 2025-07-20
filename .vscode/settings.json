@@ -1,7 +1,3 @@
 {
   "editor.tabSize": 2,
-  // Lint on save
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
-  },
 }
