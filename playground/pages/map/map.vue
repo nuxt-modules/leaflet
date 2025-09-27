@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100vh; width:100vw">
+  <div style="height:100%; width:100%;">
     <h1>Basic Map Exemple</h1>
     <LMap
       ref="map"
@@ -27,6 +27,7 @@ const map = ref(null)
 // When the map is ready
 const onMapReady = () => {
   console.log('Map is ready')
+  // @ts-ignore
   console.log(map.value.maxZoom)
 }
 </script>

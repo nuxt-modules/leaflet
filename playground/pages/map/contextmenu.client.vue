@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100vh; width:100vw">
+  <div style="height:100%; width:100%">
     <h1>Context Menu</h1>
 
     <UContextMenu :items="items" :ui="{ content: 'w-48' }">

@@ -30,17 +30,6 @@ const items = ref([
       to: '/map/contextmenu'
     }]
   },
-  {
-    label: 'Deprecated Examples',
-    icon: 'i-lucide-book-open',
-    children: [
-      {
-        label: 'Draw (Deprecated)',
-        icon: 'i-heroicons-pencil-16-solid',
-        to: '/map/draw'
-      }
-    ]
-  },
 ])
 </script>
 

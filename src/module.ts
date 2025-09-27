@@ -1,9 +1,12 @@
-import { defineNuxtModule, addComponent, createResolver, addImports } from '@nuxt/kit'
+import { defineNuxtModule, addComponent } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  markerCluster?: boolean
+  donut?: boolean
   heat?: boolean
+  hotline?: boolean
+  markerCluster?: boolean
+  rotatedMarker?: boolean
 }
 
 // Components to export
@@ -26,8 +29,10 @@ export const components = [
   'LPolyline',
   'LPopup',
   'LRectangle',
+  'LSVGOverlay',
   'LTileLayer',
   'LTooltip',
+  'LVideoOverlay',
   'LWmsTileLayer',
 ]
 
@@ -42,9 +47,6 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {},
   async setup(options, nuxt) {
-    // Create a resolver for the module
-    const resolver = createResolver(import.meta.url)
-
     // Add Leaflet's CSS
     nuxt.options.css.push('leaflet/dist/leaflet.css')
 
@@ -53,8 +55,44 @@ export default defineNuxtModule<ModuleOptions>({
       addComponent({
         name: component,
         export: component,
-        filePath: '@vue-leaflet/vue-leaflet',
+        filePath: '@maxel01/vue-leaflet',
         chunkName: `nuxt-leaflet/${component}`,
+        mode: 'all',
+      })
+    }
+
+    // If leaflet.donut is enabled
+    if (options.heat) {
+      // Auto-import the LDonut component
+      addComponent({
+        name: 'LDonut',
+        export: 'LDonut',
+        filePath: '@maxel01/vue-leaflet-plugins',
+        chunkName: 'nuxt-leaflet/LDonut',
+        mode: 'all',
+      })
+    }
+
+    // If leaflet.heat is enabled
+    if (options.heat) {
+      // Auto-import the LHeatLayer component
+      addComponent({
+        name: 'LHeatLayer',
+        export: 'LHeatLayer',
+        filePath: '@maxel01/vue-leaflet-plugins',
+        chunkName: 'nuxt-leaflet/LHeatLayer',
+        mode: 'all',
+      })
+    }
+
+    // If leaflet.hotline is enabled
+    if (options.hotline) {
+      // Auto-import the LHotline component
+      addComponent({
+        name: 'LHotline',
+        export: 'LHotline',
+        filePath: '@maxel01/vue-leaflet-plugins',
+        chunkName: 'nuxt-leaflet/LHotline',
         mode: 'all',
       })
     }
@@ -62,24 +100,27 @@ export default defineNuxtModule<ModuleOptions>({
     // If leaflet.markercluster is enabled
     if (options.markerCluster) {
       // Add Leaflet MarkerCluster CSS
-      nuxt.options.css.push('leaflet.markercluster/dist/MarkerCluster.css')
-      nuxt.options.css.push('leaflet.markercluster/dist/MarkerCluster.Default.css')
+      nuxt.options.css.push('@maxel01/vue-leaflet-plugins/dist/vue-leaflet-plugins.css')
 
-      // Auto-import the runtime composable
-      addImports({
-        name: 'useLMarkerCluster',
-        as: 'useLMarkerCluster',
-        from: resolver.resolve('runtime/composables/useLMarkerCluster'),
+      // Auto-import the MarkerClusterGroup component
+      addComponent({
+        name: 'LMarkerClusterGroup',
+        export: 'LMarkerClusterGroup',
+        filePath: '@maxel01/vue-leaflet-plugins',
+        chunkName: 'nuxt-leaflet/LMarkerClusterGroup',
+        mode: 'all',
       })
     }
 
-    // If leaflet.heat is enabled
+    // If leaflet.rotatedMarker is enabled
     if (options.heat) {
-      // Auto-import the runtime composable
-      addImports({
-        name: 'useLHeat',
-        as: 'useLHeat',
-        from: resolver.resolve('runtime/composables/useLHeat'),
+      // Auto-import the LRotatedMarker component
+      addComponent({
+        name: 'LRotatedMarker',
+        export: 'LRotatedMarker',
+        filePath: '@maxel01/vue-leaflet-plugins',
+        chunkName: 'nuxt-leaflet/LRotatedMarker',
+        mode: 'all',
       })
     }
   },

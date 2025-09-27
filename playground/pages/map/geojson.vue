@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100vh; width:100vw">
+  <div style="height:100%; width:100%;">
     <h1>GeoJson Example</h1>
     <LMap
       :zoom="6"
@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 const geojson = ref(undefined)
-const geoStyler = (feature) => ({
+const geoStyler = (feature: any) => ({
   opacity: feature.properties.code / 100000,
 })
 
