@@ -62,7 +62,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     // If leaflet.donut is enabled
-    if (options.heat) {
+    if (options.donut) {
       // Auto-import the LDonut component
       addComponent({
         name: 'LDonut',
