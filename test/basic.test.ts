@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url'
 import { describe, it, expect } from 'vitest'
-import { setup, $fetch } from '@nuxt/test-utils'
+import { setup, $fetch, useTestContext } from '@nuxt/test-utils'
 
 describe('nuxt leaflet', async () => {
   await setup({
@@ -12,5 +12,9 @@ describe('nuxt leaflet', async () => {
     const html = await $fetch('/')
     // Verify there is no error
     expect(html).toContain('<html')
+  })
+
+  it('adds Leaflet CSS to the global stylesheets by default', () => {
+    expect(useTestContext().nuxt?.options.css).toContain('leaflet/dist/leaflet.css')
   })
 })

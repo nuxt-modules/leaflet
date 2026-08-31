@@ -15,7 +15,6 @@ describe('nuxt leaflet', async () => {
   })
 
   it('does not add Leaflet CSS to the global stylesheets', () => {
-    const css = useTestContext().nuxt?.options.css ?? []
-    expect(css).not.toContain('leaflet/dist/leaflet.css')
+    expect(useTestContext().nuxt?.options.css).not.toContain('leaflet/dist/leaflet.css')
   })
 })
