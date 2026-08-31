@@ -4,17 +4,17 @@ import { setup, $fetch, useTestContext } from '@nuxt/test-utils'
 
 describe('nuxt leaflet', async () => {
   await setup({
-    rootDir: fileURLToPath(new URL('./fixtures/basic', import.meta.url)),
+    rootDir: fileURLToPath(new URL('./fixtures/no-inject-css', import.meta.url)),
   })
 
-  it('renders a basic map', async () => {
+  it('renders a basic map without the global CSS injection', async () => {
     // Get response to a server-rendered page with `$fetch`.
     const html = await $fetch('/')
     // Verify there is no error
     expect(html).toContain('<html')
   })
 
-  it('adds Leaflet CSS to the global stylesheets by default', () => {
-    expect(useTestContext().nuxt?.options.css).toContain('leaflet/dist/leaflet.css')
+  it('does not add Leaflet CSS to the global stylesheets', () => {
+    expect(useTestContext().nuxt?.options.css).not.toContain('leaflet/dist/leaflet.css')
   })
 })
