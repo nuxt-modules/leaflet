@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Performance
 
 By default, the module adds Leaflet's stylesheet to `nuxt.options.css`:
@@ -10,10 +6,7 @@ By default, the module adds Leaflet's stylesheet to `nuxt.options.css`:
 nuxt.options.css.push('leaflet/dist/leaflet.css')
 ```
 
-This is the most convenient behaviour: the map is styled correctly everywhere, without
-any extra work. But global CSS ends up in the entry stylesheet, which is render-blocking
-on **every** route. In an application where maps only appear on one or two pages, all
-the other pages still download and parse Leaflet's CSS before they can paint.
+This is the most convenient behaviour: the map is styled correctly everywhere, without any extra work. But global CSS ends up in the entry stylesheet, which is render-blocking on **every** route. In an application where maps only appear on one or two pages, all the other pages still download and parse Leaflet's CSS before they can paint.
 
 ## The `injectCss` option
 
@@ -29,14 +22,12 @@ export default defineNuxtConfig({
 ```
 
 ::: warning
-When `injectCss` is `false`, the module no longer ships any stylesheet for you. You are
-responsible for importing Leaflet's CSS wherever a map is rendered — otherwise the map
-tiles, controls and popups will be laid out incorrectly.
+When `injectCss` is `false`, the module no longer ships any stylesheet for you. You are responsible for importing Leaflet's CSS wherever a map is rendered — otherwise the map tiles, controls and popups will be laid out incorrectly.
 :::
 
 Import the stylesheet in the components that actually render a map:
 
-```vue{12}
+```vue{15}
 <template>
   <div style="height:100vh; width:100vw">
     <LMap :zoom="6" :center="[47.21322, -1.559482]">
@@ -55,18 +46,13 @@ import 'leaflet/dist/leaflet.css'
 </script>
 ```
 
-Vite then bundles the stylesheet into the chunk of the route (or component) that imports
-it, so it is only fetched by visitors who actually open a page with a map. Routes without
-a map paint without waiting for Leaflet's CSS.
+Vite then bundles the stylesheet into the chunk of the route (or component) that imports it, so it is only fetched by visitors who actually open a page with a map. Routes without a map paint without waiting for Leaflet's CSS.
 
-If several components need it, you can also import it once in a shared component or in a
-layout that is only used by the map pages.
+If several components need it, you can also import it once in a shared component or in a layout that is only used by the map pages.
 
 ## Plugin stylesheets
 
-The option also applies to the stylesheets of the [Leaflet.markercluster](/guide/marker-cluster)
-plugin. With `injectCss: false` and `markerCluster: true`, import them alongside Leaflet's
-own stylesheet:
+The option also applies to the stylesheets of the [Leaflet.markercluster](/guide/marker-cluster) plugin. With `injectCss: false` and `markerCluster: true`, import them alongside Leaflet's own stylesheet:
 
 ```ts
 import 'leaflet/dist/leaflet.css'
