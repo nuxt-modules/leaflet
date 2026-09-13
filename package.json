@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/leaflet",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Nuxt module for Leaflet",
   "homepage": "https://leaflet.nuxtjs.org",
   "repository": {
