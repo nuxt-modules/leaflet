@@ -35,5 +35,5 @@ jobs:
           env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         # Push changes to GitHub (package.json and package-lock.json)
-        - name: Push changes to GitHub
-          run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main
+        # - name: Push changes to GitHub
+        #   run: git commit -am "Release ${{ github.event.release.tag_name }}" && git push origin HEAD:main
