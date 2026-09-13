@@ -1,32 +1,57 @@
 <template>
-  <div style="height:100vh; width:100vw">
-    <h1>Marker Cluster</h1>
-    <LMap
-      ref="map"
-      :zoom="6"
-      :max-zoom="18"
-      :center="[47.21322, -1.559482]"
-      :use-global-leaflet="true"
-      @ready="onMapReady"
-    >
-      <LTileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
-        layer-type="base"
-        name="OpenStreetMap"
+  <div class="marker-cluster-page">
+    <div class="map-toolbar">
+      <h1>Marker Cluster</h1>
+      <UButton
+        color="error"
+        icon="i-lucide-trash-2"
+        label="Clear cluster"
+        :disabled="!markerCluster"
+        @click="clearCluster"
       />
-    </LMap>
+    </div>
+    <ClientOnly>
+      <div class="map-wrapper">
+        <LMap
+          ref="map"
+          style="height: 100%; width: 100%"
+          :zoom="6"
+          :max-zoom="18"
+          :center="[47.21322, -1.559482]"
+          :use-global-leaflet="true"
+          @ready="onMapReady"
+        >
+          <LTileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+            layer-type="base"
+            name="OpenStreetMap"
+          />
+        </LMap>
+      </div>
+    </ClientOnly>
   </div>
 </template>
 
 <script setup lang="ts">
-import L from 'leaflet';
+import type { MarkerOptions } from 'leaflet';
 import { ref } from 'vue';
 
 const map = ref(null) as any;
+const markerCluster = ref<Awaited<ReturnType<typeof useLMarkerCluster>>['markerCluster']>();
+
+const clearCluster = () => {
+  markerCluster.value?.clearLayers();
+};
 
 // Create locations data (20 locations around Nantes)
-const locations = [
+const locations: Array<{
+  name?: string;
+  lat: number;
+  lng: number;
+  options?: MarkerOptions;
+  popup?: string;
+}> = [
   {
     name: 'Nantes',
     lat: 47.218371,
@@ -34,10 +59,6 @@ const locations = [
     // Standard Leaflet Marker options
     options: {
       draggable: true,
-      icon: L.icon({
-        iconUrl: '/nuxt-leaflet-logo.png',
-        iconSize: [30, 30],
-      })
     } 
   },
   {
@@ -74,26 +95,47 @@ const locations = [
 
 // When the map is ready
 const onMapReady = async () => {
-  const { markers, markerCluster } = await useLMarkerCluster({
+  const cluster = await useLMarkerCluster({
     leafletObject: map.value.leafletObject,
     markers: locations,
-    options: {
-      // showCoverageOnHover: true
-      // zoomToBoundsOnClick: true
-      // spiderfyOnMaxZoom: true
-      // removeOutsideVisibleBounds: true
-      // spiderLegPolylineOptions: { weight: 1.5, color: '#222', opacity: 0.5 }
-    }
   });
+  markerCluster.value = cluster.markerCluster;
+  const { markers } = cluster;
   // Access the markers
-  markers[3].bindPopup('<h1>Hello Pornic</h1><button type="button" style="background: black; color: white;">Click me</button>');
-  const popupDiv = markers[2].getPopup()?.getContent() as HTMLElement;
+  markers[3]?.bindPopup('<h1>Hello Pornic</h1><button type="button" style="background: black; color: white;">Click me</button>');
+  const popupDiv = markers[2]?.getPopup()?.getContent() as HTMLElement;
   popupDiv.addEventListener('click', () => {
     console.log("click")
   });
   // Access the markerCluster
-  markerCluster.on('clusterclick', (event: any) => {
+  markerCluster.value.on('clusterclick', (event: any) => {
     console.log('Cluster clicked', event);
   });
 }
 </script>
+
+<style scoped>
+.marker-cluster-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100vw;
+}
+
+.map-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem 1rem;
+}
+
+.map-toolbar h1 {
+  margin: 0;
+}
+
+.map-wrapper {
+  flex: 1;
+  min-height: 0;
+}
+</style>
