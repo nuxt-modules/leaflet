@@ -37,7 +37,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
-          node-version: 24
+          node-version: 24.21.0
           cache: npm # or pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v5
